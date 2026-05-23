@@ -30,16 +30,14 @@ a{color:var(--bright);text-decoration:none}
 
 /* PROGRESS */
 .prog-wrap{background:var(--dark);padding:.75rem 1rem;border-bottom:1px solid var(--border);overflow-x:auto}
-.prog{display:flex;align-items:center;min-width:600px}
+.prog{display:flex;align-items:center;min-width:540px}
 .st{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;cursor:pointer}
 .st-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;border:2px solid var(--border);background:var(--mid);color:var(--dim);transition:all .3s;position:relative;z-index:1}
 .st.active .st-dot{background:var(--cyan);border-color:var(--bright);color:var(--navy)}
 .st.done .st-dot{background:var(--green);border-color:var(--green);color:#fff}
-.st.has-errors .st-dot{background:#E24B4A22;border-color:var(--red);color:var(--red)}
 .st-lbl{font-size:7px;font-weight:600;color:var(--dim);text-align:center;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
 .st.active .st-lbl{color:var(--cyan)}
 .st.done .st-lbl{color:var(--green)}
-.st.has-errors .st-lbl{color:var(--red)}
 .ln{flex:1;height:2px;background:var(--border);margin-bottom:14px;transition:background .3s;min-width:8px}
 .ln.done{background:var(--green)}
 
@@ -49,7 +47,6 @@ a{color:var(--bright);text-decoration:none}
 /* SECTION */
 .sec{display:none}
 .sec.active{display:block}
-
 .sec-hdr{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid #00AEEF22}
 .sec-icon{width:36px;height:36px;border-radius:8px;background:#00AEEF15;border:1px solid #00AEEF33;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sec-icon svg{width:18px;height:18px;stroke:var(--cyan);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -64,12 +61,11 @@ a{color:var(--bright);text-decoration:none}
 .f label .na-badge{font-size:8px;font-weight:600;color:var(--dim);background:var(--mid);border:1px solid var(--border);border-radius:4px;padding:1px 5px;letter-spacing:.5px;text-transform:none;cursor:pointer;transition:all .2s;margin-left:auto}
 .f label .na-badge:hover{border-color:var(--dim);color:var(--muted)}
 .f label .na-badge.active{background:#E24B4A22;border-color:var(--red);color:var(--red)}
-
 .f input,.f select,.f textarea{width:100%;background:#FFFFFF;border:1px solid #C0D4E8;border-radius:8px;padding:10px 13px;color:#0A1E3D;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:400;outline:none;transition:border-color .2s,box-shadow .2s}
 .f input:focus,.f select:focus,.f textarea:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #00AEEF1A}
 .f input.has-val{border-color:#00AEEF44}
 .f input.missing,.f select.missing,.f textarea.missing{border-color:var(--orange);background:#0F1E2A}
-.f select option{background:var(--mid)}
+.f select option{background:#FFFFFF;color:#0A1E3D}
 .f input::placeholder,.f textarea::placeholder{color:#1E3A5F;font-size:11px}
 .f textarea{resize:vertical;min-height:80px;line-height:1.6}
 .f.na-mode input,.f.na-mode select,.f.na-mode textarea{opacity:.3;pointer-events:none}
@@ -138,6 +134,17 @@ a{color:var(--bright);text-decoration:none}
 .file-tag{display:inline-flex;align-items:center;gap:5px;background:#00AEEF15;border:1px solid #00AEEF33;border-radius:20px;padding:3px 10px;font-size:10px;color:var(--cyan);font-weight:500}
 .file-tag .rm{cursor:pointer;color:#00AEEF88;font-size:14px;line-height:1;margin-left:2px}
 .file-tag .rm:hover{color:var(--red)}
+
+/* DRIVE UPLOAD BUTTON */
+.drive-zone{background:var(--mid);border:2px dashed #1A3A5A;border-radius:10px;padding:1.25rem;margin-top:4px;display:flex;align-items:center;gap:14px}
+.drive-zone-icon{width:44px;height:44px;border-radius:10px;background:#1A3A5A;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.drive-zone-icon svg{width:22px;height:22px}
+.drive-zone-info{flex:1}
+.drive-zone-info strong{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:2px}
+.drive-zone-info span{font-size:10px;color:var(--dim)}
+.drive-btn{display:inline-flex;align-items:center;gap:6px;background:#1A3A5A;border:1px solid #00AEEF44;border-radius:8px;padding:8px 14px;font-size:10px;font-weight:700;color:var(--cyan);letter-spacing:.5px;text-transform:uppercase;cursor:pointer;transition:all .2s;white-space:nowrap;text-decoration:none;font-family:'Montserrat',sans-serif}
+.drive-btn:hover{background:#0C2A48;border-color:var(--cyan);transform:translateY(-1px)}
+@media(max-width:500px){.drive-zone{flex-direction:column;text-align:center}}
 
 /* COLOR PICKER */
 .color-row{display:flex;gap:8px;align-items:center;margin-top:4px;flex-wrap:wrap}
@@ -208,7 +215,7 @@ a{color:var(--bright);text-decoration:none}
 </div>
 
 <!-- TOP PROGRESS BAR -->
-<div class="top-bar"><div class="top-bar-fill" id="topBar" style="width:11%"></div></div>
+<div class="top-bar"><div class="top-bar-fill" id="topBar" style="width:12.5%"></div></div>
 
 <!-- STEP PROGRESS -->
 <div class="prog-wrap">
@@ -217,30 +224,28 @@ a{color:var(--bright);text-decoration:none}
     <div class="ln" id="l1"></div>
     <div class="st" onclick="goTo(2)"><div class="st-dot">2</div><div class="st-lbl">Contacto</div></div>
     <div class="ln" id="l2"></div>
-    <div class="st" onclick="goTo(3)"><div class="st-dot">3</div><div class="st-lbl">Redes</div></div>
+    <div class="st" onclick="goTo(3)"><div class="st-dot">3</div><div class="st-lbl">Digital</div></div>
     <div class="ln" id="l3"></div>
-    <div class="st" onclick="goTo(4)"><div class="st-dot">4</div><div class="st-lbl">USA/Legal</div></div>
+    <div class="st" onclick="goTo(4)"><div class="st-dot">4</div><div class="st-lbl">Servicios</div></div>
     <div class="ln" id="l4"></div>
-    <div class="st" onclick="goTo(5)"><div class="st-dot">5</div><div class="st-lbl">Servicios</div></div>
+    <div class="st" onclick="goTo(5)"><div class="st-dot">5</div><div class="st-lbl">Conocimiento</div></div>
     <div class="ln" id="l5"></div>
-    <div class="st" onclick="goTo(6)"><div class="st-dot">6</div><div class="st-lbl">Conocimiento</div></div>
+    <div class="st" onclick="goTo(6)"><div class="st-dot">6</div><div class="st-lbl">Branding</div></div>
     <div class="ln" id="l6"></div>
-    <div class="st" onclick="goTo(7)"><div class="st-dot">7</div><div class="st-lbl">Branding</div></div>
+    <div class="st" onclick="goTo(7)"><div class="st-dot">7</div><div class="st-lbl">Clon IA</div></div>
     <div class="ln" id="l7"></div>
-    <div class="st" onclick="goTo(8)"><div class="st-dot">8</div><div class="st-lbl">Clon IA</div></div>
-    <div class="ln" id="l8"></div>
-    <div class="st" onclick="goTo(9)"><div class="st-dot">9</div><div class="st-lbl">Accesos</div></div>
+    <div class="st" onclick="goTo(8)"><div class="st-dot">8</div><div class="st-lbl">Accesos</div></div>
   </div>
 </div>
 
 <!-- MAIN -->
 <div class="body" id="mainBody">
 
-<!-- ══════════════════ PASO 1 ══════════════════ -->
+<!-- ══════════════════ SECCIÓN 1 — NEGOCIO ══════════════════ -->
 <div class="sec active" id="s1">
   <div class="sec-hdr">
     <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-    <div><div class="sec-title">Información del negocio</div><div class="sec-sub">Datos básicos de tu empresa o práctica profesional</div></div>
+    <div><div class="sec-title">Tu negocio</div><div class="sec-sub">Datos básicos de tu empresa o práctica profesional</div></div>
   </div>
 
   <div class="row">
@@ -251,7 +256,7 @@ a{color:var(--bright);text-decoration:none}
     </div>
     <div class="f">
       <label>Nombre del negocio <span class="req">*</span> <i class="tip-btn" onclick="tog('t1b')">i</i></label>
-      <div class="tip-box" id="t1b">Nombre comercial. Si no tienes empresa registrada usa tu nombre + especialidad. Ej: <strong>Martínez Seguros</strong> o <strong>Dr. López Odontología</strong></div>
+      <div class="tip-box" id="t1b">Nombre comercial. Si no tienes empresa registrada usa tu nombre + especialidad. Ej: <strong>Martínez Seguros</strong></div>
       <input type="text" id="bizName" placeholder="Ej. Martínez Seguros">
     </div>
   </div>
@@ -272,17 +277,8 @@ a{color:var(--bright);text-decoration:none}
         <option>Otro</option>
       </select>
     </div>
-    <div class="f optional">
-      <label>Sitio web actual <i class="tip-btn" onclick="tog('t1c')">i</i></label>
-      <div class="tip-box" id="t1c">Tu página web si tienes. Si no tienes sitio web, podemos crear uno como parte del servicio. Déjalo en blanco si no aplica.</div>
-      <input type="text" id="website" placeholder="Ej. www.tunegocio.com">
-    </div>
-  </div>
-
-  <div class="row">
     <div class="f">
-      <label>Años en el negocio <i class="tip-btn" onclick="tog('t1d')">i</i></label>
-      <div class="tip-box" id="t1d">Nos ayuda a entender el nivel de madurez del negocio y adaptar la estrategia correctamente.</div>
+      <label>Años en el negocio</label>
       <select id="yearsInBiz">
         <option value="">Seleccionar...</option>
         <option>Menos de 1 año</option>
@@ -291,6 +287,9 @@ a{color:var(--bright);text-decoration:none}
         <option>Más de 5 años</option>
       </select>
     </div>
+  </div>
+
+  <div class="row">
     <div class="f">
       <label>Zona horaria <span class="req">*</span> <i class="tip-btn" onclick="tog('t1e')">i</i></label>
       <div class="tip-box" id="t1e">Importante para enviar mensajes en el horario correcto. Si estás en Miami: <strong>Eastern Time (ET)</strong></div>
@@ -305,6 +304,11 @@ a{color:var(--bright);text-decoration:none}
         <option>Otro</option>
       </select>
     </div>
+    <div class="f optional">
+      <label>Sitio web actual <i class="tip-btn" onclick="tog('t1c')">i</i></label>
+      <div class="tip-box" id="t1c">Tu página web si tienes. Si no tienes, podemos crear una como parte del servicio.</div>
+      <input type="text" id="website" placeholder="Ej. www.tunegocio.com">
+    </div>
   </div>
 
   <div class="f">
@@ -314,11 +318,11 @@ a{color:var(--bright);text-decoration:none}
   </div>
 </div>
 
-<!-- ══════════════════ PASO 2 ══════════════════ -->
+<!-- ══════════════════ SECCIÓN 2 — CONTACTO ══════════════════ -->
 <div class="sec" id="s2">
   <div class="sec-hdr">
     <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.15 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg></div>
-    <div><div class="sec-title">Contacto y comunicación</div><div class="sec-sub">Cómo nos comunicamos contigo y cómo contactamos a tus clientes</div></div>
+    <div><div class="sec-title">Contacto y comunicación</div><div class="sec-sub">Cómo te contactamos a ti y cómo contactas a tus clientes</div></div>
   </div>
 
   <div class="row">
@@ -329,7 +333,7 @@ a{color:var(--bright);text-decoration:none}
     </div>
     <div class="f">
       <label>Teléfono de contacto <span class="req">*</span> <i class="tip-btn" onclick="tog('t2b')">i</i></label>
-      <div class="tip-box" id="t2b">Tu teléfono personal o de negocio con código de país. Para USA: <strong>+1 305 000 0000</strong>. Este número es para contactarte a ti, no el que ven tus clientes.</div>
+      <div class="tip-box" id="t2b">Tu teléfono con código de país. Para USA: <strong>+1 305 000 0000</strong>. Este número es para contactarte a ti, no el que ven tus clientes.</div>
       <input type="tel" id="phone" placeholder="+1 (305) 000-0000">
     </div>
   </div>
@@ -338,7 +342,7 @@ a{color:var(--bright);text-decoration:none}
 
   <div class="f">
     <label>¿Tienes número dedicado para WhatsApp Business? <i class="tip-btn" onclick="tog('t2c')">i</i></label>
-    <div class="tip-box" id="t2c"><strong>WhatsApp Business</strong> necesita un número separado de tu celular personal. Los mensajes automáticos saldrán desde ese número. Si no tienes, nosotros conseguimos uno virtual (~$1/mes).<br><br>
+    <div class="tip-box" id="t2c"><strong>WhatsApp Business</strong> necesita un número separado de tu celular personal. Si no tienes, conseguimos uno virtual (~$1/mes).<br><br>
     <div class="step"><span>1</span> Abre WhatsApp Business en tu teléfono</div>
     <div class="step"><span>2</span> Ve a Configuración → Info de empresa</div>
     <div class="step"><span>3</span> El número que ves ahí es tu número de WhatsApp Business</div></div>
@@ -351,54 +355,66 @@ a{color:var(--bright);text-decoration:none}
 
   <div class="f optional">
     <label>Número de WhatsApp Business <i class="tip-btn" onclick="tog('t2d')">i</i></label>
-    <div class="tip-box" id="t2d">Solo si ya tienes uno. Escríbelo con código de país. <strong>No uses tu número personal</strong> si no quieres que el sistema automático salga desde tu celular.</div>
+    <div class="tip-box" id="t2d">Solo si ya tienes uno. Con código de país. Ej: <strong>+1 (305) 000-0000</strong></div>
     <input type="tel" id="waNumber" placeholder="+1 (305) 000-0000">
   </div>
 
-  <div class="f optional">
-    <label>¿Tiene número dedicado para llamadas? <i class="tip-btn" onclick="tog('t2e')">i</i></label>
-    <div class="tip-box" id="t2e">Para el voice bot outbound (que llama a leads) y el voice bot inbound (que atiende llamadas) necesitamos un número de teléfono dedicado. Puede ser un número de Twilio virtual.</div>
+  <div class="dvd">Teléfono para llamadas automatizadas</div>
+
+  <div class="f">
+    <label>¿Tienes número dedicado para llamadas? <i class="tip-btn" onclick="tog('t2e')">i</i></label>
+    <div class="tip-box" id="t2e">Para el voice bot necesitamos un número dedicado (puede ser Twilio virtual ~$1/mes). Este número llama y recibe llamadas de tus leads.</div>
     <div class="radio-group" id="callStatus">
-      <div class="radio-item sel" onclick="selRad(this,'callStatus')"><input type="radio" name="call" value="si"><div class="radio-dot"></div><span class="radio-lbl">Sí tengo</span></div>
-      <div class="radio-item" onclick="selRad(this,'callStatus')"><input type="radio" name="call" value="no"><div class="radio-dot"></div><span class="radio-lbl">No tengo</span></div>
+      <div class="radio-item" onclick="selRad(this,'callStatus')"><input type="radio" name="call" value="si"><div class="radio-dot"></div><span class="radio-lbl">Sí, ya tengo</span></div>
+      <div class="radio-item sel" onclick="selRad(this,'callStatus')"><input type="radio" name="call" value="no"><div class="radio-dot"></div><span class="radio-lbl">No, necesito uno</span></div>
     </div>
+  </div>
+
+  <div class="f optional">
+    <label>¿Cómo prefieres que te contactemos durante la implementación? <i class="tip-btn" onclick="tog('t2f')">i</i></label>
+    <div class="tip-box" id="t2f">Durante los primeros días necesitaremos tu aprobación en pasos clave.</div>
+    <select id="preferredContact">
+      <option value="">Seleccionar...</option>
+      <option>WhatsApp (más rápido — recomendado)</option>
+      <option>Email</option>
+      <option>Videollamada semanal</option>
+      <option>WhatsApp + videollamada semanal</option>
+    </select>
   </div>
 </div>
 
-<!-- ══════════════════ PASO 3 ══════════════════ -->
+<!-- ══════════════════ SECCIÓN 3 — DIGITAL ══════════════════ -->
 <div class="sec" id="s3">
   <div class="sec-hdr">
     <div class="sec-icon"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
-    <div><div class="sec-title">Redes sociales y publicidad</div><div class="sec-sub">Conectamos tus canales para automatizar la captación de leads</div></div>
+    <div><div class="sec-title">Presencia digital</div><div class="sec-sub">Redes sociales y publicidad — conectamos tus canales para automatizar captación</div></div>
+  </div>
+
+  <div class="dvd">Redes sociales</div>
+
+  <div class="row">
+    <div class="f optional">
+      <label>Instagram <i class="tip-btn" onclick="tog('t3a')">i</i></label>
+      <div class="tip-box" id="t3a">Tu usuario de Instagram sin el @. El chatbot de DMs se conecta aquí.</div>
+      <input type="text" id="instagram" placeholder="Ej. johana.seguros">
+    </div>
+    <div class="f optional">
+      <label>TikTok <i class="tip-btn" onclick="tog('t3d')">i</i></label>
+      <div class="tip-box" id="t3d">Para publicación automatizada de videos con tu clon digital.</div>
+      <input type="text" id="tiktok" placeholder="@tuusuario">
+    </div>
   </div>
 
   <div class="row">
     <div class="f optional">
-      <label>Instagram <i class="tip-btn" onclick="tog('t3a')">i</i> <span class="na-badge" onclick="toggleNA(this,'f3ig')">No aplica</span></label>
-      <div class="tip-box" id="t3a">Tu usuario de Instagram sin el @. El chatbot de DMs se conecta aquí. Para encontrarlo: abre Instagram → tu perfil → el nombre debajo de tu foto de perfil.</div>
-      <input type="text" id="instagram" placeholder="Ej. johana.seguros">
-      <div class="na-overlay">Marcado como No aplica — se omitirá en la configuración</div>
-    </div>
-    <div class="f optional" id="f3ig">
-      <label>Facebook Page <i class="tip-btn" onclick="tog('t3b')">i</i> <span class="na-badge" onclick="toggleNA(this,'f3fb')">No aplica</span></label>
-      <div class="tip-box" id="t3b"><strong>Página de Facebook</strong> — no perfil personal. Para encontrar la URL: abre tu página → copia el link de la barra de direcciones. Ej: <strong>facebook.com/NombreDeTuPagina</strong></div>
+      <label>Facebook Page <i class="tip-btn" onclick="tog('t3b')">i</i></label>
+      <div class="tip-box" id="t3b"><strong>Página de Facebook</strong> — no perfil personal. Ej: <strong>facebook.com/NombreDeTuPagina</strong></div>
       <input type="text" id="facebook" placeholder="facebook.com/tupagina">
-      <div class="na-overlay">Marcado como No aplica</div>
     </div>
-  </div>
-
-  <div class="row" id="f3fb">
     <div class="f optional">
-      <label>LinkedIn <i class="tip-btn" onclick="tog('t3c')">i</i> <span class="na-badge" onclick="toggleNA(this,null)">No aplica</span></label>
-      <div class="tip-box" id="t3c">Para prospección profesional y contenido. URL de tu perfil: <strong>linkedin.com/in/tu-nombre</strong></div>
+      <label>LinkedIn <i class="tip-btn" onclick="tog('t3c')">i</i></label>
+      <div class="tip-box" id="t3c">Para prospección profesional y contenido. URL: <strong>linkedin.com/in/tu-nombre</strong></div>
       <input type="text" id="linkedin" placeholder="linkedin.com/in/tuusuario">
-      <div class="na-overlay">Marcado como No aplica</div>
-    </div>
-    <div class="f optional">
-      <label>TikTok <i class="tip-btn" onclick="tog('t3d')">i</i> <span class="na-badge" onclick="toggleNA(this,null)">No aplica</span></label>
-      <div class="tip-box" id="t3d">Para publicación automatizada de videos con tu clon digital.</div>
-      <input type="text" id="tiktok" placeholder="@tuusuario">
-      <div class="na-overlay">Marcado como No aplica</div>
     </div>
   </div>
 
@@ -407,7 +423,7 @@ a{color:var(--bright);text-decoration:none}
   <div class="row">
     <div class="f">
       <label>¿Corres Meta Ads? <i class="tip-btn" onclick="tog('t3e')">i</i></label>
-      <div class="tip-box" id="t3e"><strong>Meta Ads</strong> = anuncios en Facebook e Instagram. Conectar tus Ads al CRM hace que cada lead que llega de un anuncio entre automáticamente a tu pipeline sin que hagas nada.</div>
+      <div class="tip-box" id="t3e"><strong>Meta Ads</strong> = anuncios en Facebook e Instagram. Conectar tus Ads al CRM hace que cada lead entre automáticamente a tu pipeline.</div>
       <select id="metaAds">
         <option value="">Seleccionar...</option>
         <option>Sí, activos ahora</option>
@@ -418,7 +434,7 @@ a{color:var(--bright);text-decoration:none}
     </div>
     <div class="f">
       <label>¿Tienes Meta Business Manager? <i class="tip-btn" onclick="tog('t3f')">i</i></label>
-      <div class="tip-box" id="t3f"><strong>Meta Business Manager</strong> es la plataforma para negocios en Facebook (business.facebook.com). Para verificar si tienes uno: entra a <strong>business.facebook.com</strong> — si ves un panel con tu negocio, sí tienes.</div>
+      <div class="tip-box" id="t3f">Para verificar: entra a <strong>business.facebook.com</strong> — si ves un panel con tu negocio, sí tienes.</div>
       <select id="metaBM">
         <option value="">Seleccionar...</option>
         <option>Sí, verificado</option>
@@ -432,12 +448,12 @@ a{color:var(--bright);text-decoration:none}
   <div class="row">
     <div class="f optional">
       <label>ID de cuenta publicitaria <i class="tip-btn" onclick="tog('t3g')">i</i></label>
-      <div class="tip-box" id="t3g">Para encontrarlo: <strong>business.facebook.com</strong> → Configuración → Cuentas publicitarias. Verás un número de 15 dígitos. Ej: <strong>act_123456789012345</strong></div>
+      <div class="tip-box" id="t3g"><strong>business.facebook.com</strong> → Configuración → Cuentas publicitarias. Verás un número de 15 dígitos.</div>
       <input type="text" id="adAcctId" placeholder="act_123456789012345">
     </div>
     <div class="f optional">
       <label>ID del Pixel de Meta <i class="tip-btn" onclick="tog('t3h')">i</i></label>
-      <div class="tip-box" id="t3h">El <strong>Pixel</strong> rastrea visitantes en tu web. Para encontrarlo: <strong>business.facebook.com</strong> → Administrador de eventos → tu Pixel → número de 15 dígitos. Si no tienes, nosotros lo configuramos.</div>
+      <div class="tip-box" id="t3h">El Pixel rastrea visitantes en tu web. Si no tienes, nosotros lo configuramos.</div>
       <input type="text" id="pixelId" placeholder="1234567890123456">
     </div>
   </div>
@@ -445,7 +461,7 @@ a{color:var(--bright);text-decoration:none}
   <div class="row">
     <div class="f">
       <label>¿Tienes Google Business Profile? <i class="tip-btn" onclick="tog('t3i')">i</i></label>
-      <div class="tip-box" id="t3i"><strong>Google Business Profile</strong> = tu ficha en Google Maps. Para verificar: busca el nombre de tu negocio en Google. Si aparece un recuadro a la derecha con datos y horario — sí tienes.</div>
+      <div class="tip-box" id="t3i">Busca el nombre de tu negocio en Google. Si aparece un recuadro a la derecha con datos — sí tienes.</div>
       <select id="googleBiz">
         <option value="">Seleccionar...</option>
         <option>Sí, activo y verificado</option>
@@ -455,8 +471,7 @@ a{color:var(--bright);text-decoration:none}
       </select>
     </div>
     <div class="f">
-      <label>¿Tienes Google Ads activos? <i class="tip-btn" onclick="tog('t3j')">i</i></label>
-      <div class="tip-box" id="t3j">Anuncios de búsqueda en Google. Si los tienes, los conectamos al CRM para rastrear leads.</div>
+      <label>¿Tienes Google Ads activos?</label>
       <select id="googleAds">
         <option value="">Seleccionar...</option>
         <option>Sí, activos</option>
@@ -467,112 +482,47 @@ a{color:var(--bright);text-decoration:none}
   </div>
 </div>
 
-<!-- ══════════════════ PASO 4 ══════════════════ -->
+<!-- ══════════════════ SECCIÓN 4 — SERVICIOS ══════════════════ -->
 <div class="sec" id="s4">
   <div class="sec-hdr">
-    <div class="sec-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-    <div><div class="sec-title">Cumplimiento legal — USA</div><div class="sec-sub">Requerimientos para operar en Estados Unidos. Omite si no aplica.</div></div>
-  </div>
-
-  <div class="ibox warn">Si no operas en USA o estas secciones no aplican a tu negocio, selecciona "No aplica" en cada campo y continúa al siguiente paso.</div>
-
-  <div class="f">
-    <label>Estado donde opera <i class="tip-btn" onclick="tog('t4a')">i</i> <span class="na-badge" onclick="toggleNA(this,null)">No aplica</span></label>
-    <div class="tip-box" id="t4a">El estado de USA donde principalmente atiendes clientes. Algunos estados tienen regulaciones específicas para seguros, salud y servicios financieros.</div>
-    <input type="text" id="state" placeholder="Ej. Florida, Texas, California">
-    <div class="na-overlay">Marcado como No aplica</div>
-  </div>
-
-  <div class="f">
-    <label>¿Trabaja bajo broker o de forma independiente? <i class="tip-btn" onclick="tog('t4b')">i</i></label>
-    <div class="tip-box" id="t4b"><strong>Importante:</strong> Si trabajas bajo un broker, algunas configuraciones como el número de teléfono, el registro A2P y los permisos de comunicación pueden depender de las políticas del broker. Consúltalo con ellos antes de continuar.</div>
-    <select id="brokerStatus">
-      <option value="">Seleccionar...</option>
-      <option>Independiente</option>
-      <option>Bajo un broker</option>
-      <option>Ambos / Mixto</option>
-      <option>No aplica</option>
-    </select>
-  </div>
-
-  <div class="ibox legal">
-    <strong>A2P 10DLC Registration</strong><br>
-    En Estados Unidos, cualquier negocio que quiera enviar SMS automatizados necesita registrar su número en el sistema A2P 10DLC. Sin este registro, los operadores bloquean los mensajes. Si trabajas bajo un broker, el registro puede corresponderle a ellos.
-  </div>
-
-  <div class="f">
-    <label>Estado del registro A2P <i class="tip-btn" onclick="tog('t4c')">i</i> <span class="na-badge" onclick="toggleNA(this,null)">No aplica</span></label>
-    <div class="tip-box" id="t4c">El <strong>registro A2P 10DLC</strong> es obligatorio para enviar SMS masivos en USA. Nosotros gestionamos el proceso completo — solo necesitamos tu información de negocio (EIN, nombre legal, descripción del uso).</div>
-    <select id="a2pStatus">
-      <option value="">Seleccionar...</option>
-      <option>Ya tengo registro A2P activo</option>
-      <option>No tengo — necesito registrarme</option>
-      <option>Mi broker lo maneja</option>
-      <option>No sé qué es esto</option>
-    </select>
-    <div class="na-overlay">Marcado como No aplica</div>
-  </div>
-
-  <div class="ibox legal">
-    <strong>TCPA Compliance</strong><br>
-    La ley TCPA exige consentimiento ESCRITO de cada persona antes de enviarle mensajes o llamadas automáticas. Tu formulario de captura de leads debe incluir una casilla de aceptación. Sin esto puedes recibir multas. Nosotros configuramos esto correctamente.
-  </div>
-
-  <div class="f">
-    <label>¿Tienes casilla de consentimiento en tu formulario? <i class="tip-btn" onclick="tog('t4d')">i</i> <span class="na-badge" onclick="toggleNA(this,null)">No aplica</span></label>
-    <div class="tip-box" id="t4d">Ejemplo de casilla correcta: <strong>"Acepto recibir mensajes de texto y llamadas automáticas de [tu negocio]. Puedo cancelar en cualquier momento."</strong> Nosotros la añadimos a todos tus formularios de captura.</div>
-    <select id="tcpaStatus">
-      <option value="">Seleccionar...</option>
-      <option>Sí, ya tengo consentimiento configurado</option>
-      <option>No, necesito configurarlo</option>
-      <option>No sé</option>
-    </select>
-    <div class="na-overlay">Marcado como No aplica</div>
-  </div>
-
-  <div class="f">
-    <label>¿Tienes EIN (Tax ID de negocio)? <i class="tip-btn" onclick="tog('t4e')">i</i> <span class="na-badge" onclick="toggleNA(this,null)">No aplica</span></label>
-    <div class="tip-box" id="t4e">El <strong>EIN</strong> es el número de identificación fiscal de tu negocio en USA (como el RFC en México). Se necesita para el registro A2P. Si eres solopreneur puedes usar tu SSN, pero un EIN es más recomendable. Para obtenerlo es gratis en <strong>irs.gov</strong>.</div>
-    <select id="einStatus">
-      <option value="">Seleccionar...</option>
-      <option>Sí, tengo EIN</option>
-      <option>No tengo — uso SSN</option>
-      <option>En proceso de obtenerlo</option>
-      <option>No aplica</option>
-    </select>
-    <div class="na-overlay">Marcado como No aplica</div>
-  </div>
-</div>
-
-<!-- ══════════════════ PASO 5 ══════════════════ -->
-<div class="sec" id="s5">
-  <div class="sec-hdr">
     <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
-    <div><div class="sec-title">Servicios y cliente ideal</div><div class="sec-sub">Qué vendes y a quién — el cerebro de tu chatbot</div></div>
+    <div><div class="sec-title">Servicios y cliente ideal</div><div class="sec-sub">Qué vendes, a quién y cómo — el cerebro de tu sistema de IA</div></div>
   </div>
 
   <div class="f">
-    <label>¿Qué servicios ofreces exactamente? <span class="req">*</span> <i class="tip-btn" onclick="tog('t5a')">i</i></label>
-    <div class="tip-box" id="t5a">Sé específico. Ej para seguros: <strong>"Pólizas de vida, salud y auto para familias latinas en Florida. Trabajo con Cica Life, Allstate y Progressive."</strong> El chatbot usará esto para responder preguntas de tus leads.</div>
+    <label>¿Qué servicios ofreces exactamente? <span class="req">*</span> <i class="tip-btn" onclick="tog('t4a')">i</i></label>
+    <div class="tip-box" id="t4a">Sé específico. Ej para seguros: <strong>"Pólizas de vida, salud y auto para familias latinas en Florida. Trabajo con Cica Life, Allstate y Progressive."</strong> El chatbot usará esto para responder preguntas de tus leads.</div>
     <textarea id="services" placeholder="Ej. Ofrezco pólizas de seguro de vida, salud y auto. Trabajo principalmente con familias latinoamericanas en Miami. Mis principales compañías son..."></textarea>
   </div>
 
   <div class="f">
-    <label>¿Cuál es tu cliente ideal? <span class="req">*</span> <i class="tip-btn" onclick="tog('t5b')">i</i></label>
-    <div class="tip-box" id="t5b">Describe edad, ubicación, situación de vida, problema que tiene. Ej: <strong>"Familias latinas entre 30-50 años en Miami, que trabajan en construction o retail, sin seguro de vida, buscan protección para su familia."</strong></div>
+    <label>¿Cuál es tu cliente ideal? <span class="req">*</span> <i class="tip-btn" onclick="tog('t4b')">i</i></label>
+    <div class="tip-box" id="t4b">Describe edad, ubicación, situación de vida, problema que tiene. Ej: <strong>"Familias latinas entre 30-50 años en Miami, que trabajan en construction o retail, sin seguro de vida."</strong></div>
     <textarea id="idealClient" placeholder="Ej. Familias latinas entre 30-50 años, en Miami, que buscan proteger a su familia con un seguro de vida asequible..."></textarea>
   </div>
 
-  <div class="f">
-    <label>¿Cómo llegan tus leads actualmente? <i class="tip-btn" onclick="tog('t5c')">i</i></label>
-    <div class="tip-box" id="t5c">¿Por referidos, Meta Ads, Google, Instagram, puerta a puerta, LinkedIn? Saber esto nos ayuda a configurar los pipelines correctamente.</div>
-    <textarea id="leadSource" placeholder="Ej. 70% referidos de clientes actuales, 20% Meta Ads, 10% Instagram orgánico..."></textarea>
+  <div class="row">
+    <div class="f optional">
+      <label>¿Cómo llegan tus leads actualmente? <i class="tip-btn" onclick="tog('t4c')">i</i></label>
+      <div class="tip-box" id="t4c">Referidos, Meta Ads, Google, Instagram, puerta a puerta... Saber esto nos ayuda a configurar los pipelines correctamente.</div>
+      <textarea id="leadSource" placeholder="Ej. 70% referidos, 20% Meta Ads, 10% Instagram orgánico..."></textarea>
+    </div>
+    <div class="f optional">
+      <label>Tu proceso de ventas paso a paso <i class="tip-btn" onclick="tog('t4d')">i</i></label>
+      <div class="tip-box" id="t4d">¿Cómo es el proceso desde que un lead te contacta hasta que firma? El chatbot seguirá exactamente este proceso.</div>
+      <textarea id="salesProcess" placeholder="1. Lead me contacta por WhatsApp
+2. Le envío información básica
+3. Agendo una llamada de 20 min
+4. Explico opciones y costos
+5. Envío cotización por email
+6. Seguimiento hasta la firma"></textarea>
+    </div>
   </div>
 
   <div class="row">
     <div class="f">
-      <label>Precio promedio / comisión <i class="tip-btn" onclick="tog('t5d')">i</i></label>
-      <div class="tip-box" id="t5d">Cuánto paga típicamente un cliente. Ayuda a priorizar leads de mayor valor. No tiene que ser exacto.</div>
+      <label>Precio promedio / comisión <i class="tip-btn" onclick="tog('t4e')">i</i></label>
+      <div class="tip-box" id="t4e">Cuánto paga típicamente un cliente. Ayuda a priorizar leads de mayor valor. No tiene que ser exacto.</div>
       <select id="avgTicket">
         <option value="">Seleccionar...</option>
         <option>Menos de $500</option>
@@ -583,9 +533,9 @@ a{color:var(--bright);text-decoration:none}
       </select>
     </div>
     <div class="f optional">
-      <label>Guión de ventas / presentación <i class="tip-btn" onclick="tog('t5e')">i</i></label>
-      <div class="tip-box" id="t5e">Si tienes un guión o presentación de ventas, sube el archivo aquí (PDF, Word, PowerPoint). Lo usamos para entrenar el chatbot con tu proceso exacto de ventas.</div>
-      <div class="file-zone" onclick="void(0)">
+      <label>Guión de ventas <i class="tip-btn" onclick="tog('t4f')">i</i></label>
+      <div class="tip-box" id="t4f">Si tienes un guión o presentación de ventas, sube el archivo (PDF, Word, PPT). Se usa para entrenar el chatbot con tu proceso exacto.</div>
+      <div class="file-zone">
         <input type="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt" onchange="addFiles(this,'salesScriptFiles')">
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
         <div class="fz-title">Subir guión de ventas</div>
@@ -596,48 +546,48 @@ a{color:var(--bright);text-decoration:none}
   </div>
 </div>
 
-<!-- ══════════════════ PASO 6 ══════════════════ -->
-<div class="sec" id="s6">
+<!-- ══════════════════ SECCIÓN 5 — CONOCIMIENTO ══════════════════ -->
+<div class="sec" id="s5">
   <div class="sec-hdr">
     <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
-    <div><div class="sec-title">Base de conocimiento</div><div class="sec-sub">Información para entrenar tu chatbot y agente de voz</div></div>
+    <div><div class="sec-title">Base de conocimiento</div><div class="sec-sub">Información para entrenar tu chatbot y agente de voz con tu voz real</div></div>
   </div>
 
   <div class="ibox">
     <strong>¿Para qué sirve esto?</strong><br>
-    Para que tu chatbot y agente de voz respondan correctamente necesitamos entrenarlos con información real de tu negocio. Entre más nos des, más inteligente será tu asistente. Puedes escribir directamente aquí, subir archivos o hacer ambas cosas. <strong>No tienes que llenarlo todo ahora</strong> — puedes enviarlo incompleto y completarlo después.
+    Para que tu chatbot responda correctamente necesitamos entrenarlo con información real de tu negocio. Entre más nos des, más inteligente será tu asistente. <strong>No tienes que llenarlo todo ahora</strong> — puedes enviar incompleto y completarlo después.
   </div>
 
-  <div class="dvd">Sobre ti y tu marca</div>
+  <div class="dvd">Tu historia y propuesta de valor</div>
 
   <div class="f optional">
-    <label>Tu historia y trayectoria profesional <i class="tip-btn" onclick="tog('t6a')">i</i></label>
-    <div class="tip-box" id="t6a">¿Cuántos años llevas en la industria? ¿Cómo empezaste? ¿Qué logros tienes? El chatbot usa esto cuando alguien pregunta <strong>"¿Quién es Johana?"</strong></div>
+    <label>Tu historia y trayectoria <i class="tip-btn" onclick="tog('t5a')">i</i></label>
+    <div class="tip-box" id="t5a">¿Cuántos años llevas en la industria? ¿Cómo empezaste? ¿Qué logros tienes? El chatbot usa esto cuando alguien pregunta <strong>"¿Quién es [tu nombre]?"</strong></div>
     <textarea id="story" placeholder="Ej. Llevo 8 años en el sector seguros. Empecé trabajando en una agencia grande y decidí independizarme para poder dar un servicio más personalizado..."></textarea>
   </div>
 
   <div class="row">
     <div class="f optional">
-      <label>¿Por qué te dedicas a esto? <i class="tip-btn" onclick="tog('t6b')">i</i></label>
-      <div class="tip-box" id="t6b">Tu "por qué" humaniza la marca y genera confianza. Ej: <strong>"Mi papá murió sin seguro y mi familia quedó en una situación difícil. Por eso ayudo a familias a protegerse."</strong></div>
+      <label>¿Por qué te dedicas a esto? <i class="tip-btn" onclick="tog('t5b')">i</i></label>
+      <div class="tip-box" id="t5b">Tu "por qué" humaniza la marca y genera confianza. Ej: <strong>"Mi papá murió sin seguro y mi familia quedó en una situación difícil. Por eso ayudo a familias a protegerse."</strong></div>
       <textarea id="whyYou" placeholder="Tu historia detrás del negocio..."></textarea>
     </div>
     <div class="f optional">
-      <label>¿Qué te diferencia? <i class="tip-btn" onclick="tog('t6c')">i</i></label>
-      <div class="tip-box" id="t6c">¿Por qué alguien debería elegirte a ti y no a otro? Ej: <strong>"Hablo español, conozco la cultura latina, no vendo pólizas — vendo tranquilidad."</strong></div>
+      <label>¿Qué te diferencia? <i class="tip-btn" onclick="tog('t5c')">i</i></label>
+      <div class="tip-box" id="t5c">¿Por qué alguien debería elegirte a ti? Ej: <strong>"Hablo español, conozco la cultura latina, no vendo pólizas — vendo tranquilidad."</strong></div>
       <textarea id="differentiator" placeholder="Lo que te hace único en tu industria..."></textarea>
     </div>
   </div>
 
   <div class="row">
     <div class="f optional">
-      <label>Slogan o frase de marca <i class="tip-btn" onclick="tog('t6d')">i</i></label>
-      <div class="tip-box" id="t6d">Tu frase característica, si tienes. Ej: <strong>"Protegemos lo que más importa"</strong></div>
+      <label>Slogan o frase de marca <i class="tip-btn" onclick="tog('t5d')">i</i></label>
+      <div class="tip-box" id="t5d">Tu frase característica. Ej: <strong>"Protegemos lo que más importa"</strong></div>
       <input type="text" id="slogan" placeholder="Ej. Protegemos lo que más importa">
     </div>
     <div class="f">
-      <label>Tono de comunicación <span class="req">*</span> <i class="tip-btn" onclick="tog('t6e')">i</i></label>
-      <div class="tip-box" id="t6e"><strong>Formal:</strong> "Buenos días, le saluda Sofía de Martínez Seguros..."<br><strong>Amigable:</strong> "¡Hola! Gracias por escribirnos, ¿en qué te puedo ayudar?"<br><strong>Profesional con calidez:</strong> Balance entre ambos — recomendado para la mayoría de industrias.</div>
+      <label>Tono de comunicación <span class="req">*</span> <i class="tip-btn" onclick="tog('t5e')">i</i></label>
+      <div class="tip-box" id="t5e"><strong>Formal:</strong> "Buenos días, le saluda Sofía..."<br><strong>Amigable:</strong> "¡Hola! ¿En qué te puedo ayudar?"<br><strong>Profesional con calidez:</strong> Balance — recomendado para la mayoría.</div>
       <select id="tone">
         <option value="">Seleccionar...</option>
         <option>Formal y profesional</option>
@@ -649,11 +599,11 @@ a{color:var(--bright);text-decoration:none}
     </div>
   </div>
 
-  <div class="dvd">Sobre tu negocio — preguntas frecuentes</div>
+  <div class="dvd">Preguntas y objeciones frecuentes</div>
 
   <div class="f optional">
-    <label>Preguntas frecuentes que te hacen (mínimo 5 con respuestas) <i class="tip-btn" onclick="tog('t6f')">i</i></label>
-    <div class="tip-box" id="t6f">Escribe las preguntas que siempre te hacen los leads ANTES de contratar. El chatbot las responderá automáticamente. Formato:<br><strong>P: ¿Cuánto cuesta?</strong><br>R: Depende del plan, desde $X al mes...<br><br>Si tienes este listado en un documento, sube el archivo abajo.</div>
+    <label>Preguntas frecuentes (mínimo 5 con respuestas) <i class="tip-btn" onclick="tog('t5f')">i</i></label>
+    <div class="tip-box" id="t5f">Las preguntas que siempre te hacen los leads ANTES de contratar. El chatbot las responderá automáticamente.<br><br>Formato sugerido:<br><strong>P: ¿Cuánto cuesta?</strong><br>R: Depende del plan, desde $X al mes...</div>
     <textarea id="faq" style="min-height:120px" placeholder="P: ¿Cuánto cuesta una póliza básica?
 R: Depende del plan y la edad, desde $30 al mes...
 
@@ -665,8 +615,8 @@ R: Entre 3 y 7 días hábiles..."></textarea>
   </div>
 
   <div class="f optional">
-    <label>Objeciones comunes y cómo las manejas <i class="tip-btn" onclick="tog('t6g')">i</i></label>
-    <div class="tip-box" id="t6g">Las excusas o dudas que ponen las personas antes de no comprar. Ej: <strong>"Está muy caro" / "Lo voy a pensar" / "No tengo tiempo"</strong>. Y cómo las resuelves tú normalmente.</div>
+    <label>Objeciones comunes y cómo las manejas <i class="tip-btn" onclick="tog('t5g')">i</i></label>
+    <div class="tip-box" id="t5g">Las excusas que ponen las personas antes de no comprar y cómo las resuelves tú normalmente.</div>
     <textarea id="objections" placeholder="Objeción: 'Está muy caro'
 Respuesta: Entiendo. Pero considera que un café al día cuesta más que esta póliza...
 
@@ -675,54 +625,30 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
   </div>
 
   <div class="f optional">
-    <label>Tu proceso de ventas paso a paso <i class="tip-btn" onclick="tog('t6h')">i</i></label>
-    <div class="tip-box" id="t6h">¿Cómo es el proceso desde que un lead te contacta hasta que firma? Ej: <strong>1. Lead escribe por WhatsApp → 2. Envío info básica → 3. Agendar llamada → 4. Demo de 30 min → 5. Propuesta → 6. Firma</strong>. El chatbot seguirá exactamente este proceso.</div>
-    <textarea id="salesProcess" placeholder="1. Lead me contacta por WhatsApp o Instagram
-2. Le envío información básica del servicio
-3. Agendo una llamada de 20 minutos
-4. En la llamada explico opciones y costos
-5. Le envío cotización por email
-6. Seguimiento hasta la firma"></textarea>
-  </div>
-
-  <div class="f optional">
-    <label>Testimonios de clientes <i class="tip-btn" onclick="tog('t6i')">i</i></label>
-    <div class="tip-box" id="t6i">Copiar texto de reseñas de Google, Facebook o mensajes de WhatsApp de clientes satisfechos. Se muestran automáticamente cuando un lead duda.</div>
+    <label>Testimonios de clientes <i class="tip-btn" onclick="tog('t5h')">i</i></label>
+    <div class="tip-box" id="t5h">Reseñas de Google, Facebook o mensajes de WhatsApp de clientes satisfechos. Se muestran automáticamente cuando un lead duda.</div>
     <textarea id="testimonials" placeholder="'Johana me ayudó a conseguir la mejor póliza para mi familia. El proceso fue muy fácil.' — María G., Miami FL
 
-'Llevaba años sin seguro por miedo al papeleo. Johana lo hizo todo en 3 días.' — Carlos R."></textarea>
+'Llevaba años sin seguro por miedo al papeleo. Lo hizo todo en 3 días.' — Carlos R."></textarea>
   </div>
 
-  <div class="dvd">Archivos de base de conocimiento</div>
+  <div class="dvd">Documentos de soporte</div>
 
-  <div class="row">
-    <div class="f optional">
-      <label>Documentos del negocio <i class="tip-btn" onclick="tog('t6j')">i</i></label>
-      <div class="tip-box" id="t6j">PDFs informativos, presentaciones, brochures, guías de tus servicios, política de privacidad, términos y condiciones.</div>
-      <div class="file-zone">
-        <input type="file" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.txt" onchange="addFiles(this,'docFiles')">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-        <div class="fz-title">Subir documentos</div>
-        <div class="fz-sub">PDF, Word, PPT — múltiples archivos</div>
-      </div>
-      <div class="file-list" id="docFiles"></div>
+  <div class="f optional">
+    <label>Documentos del negocio <i class="tip-btn" onclick="tog('t5i')">i</i></label>
+    <div class="tip-box" id="t5i">PDFs informativos, presentaciones, brochures, guías de servicios, política de privacidad, términos y condiciones.</div>
+    <div class="file-zone">
+      <input type="file" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.txt" onchange="addFiles(this,'docFiles')">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+      <div class="fz-title">Subir documentos</div>
+      <div class="fz-sub">PDF, Word, PPT — múltiples archivos</div>
     </div>
-    <div class="f optional">
-      <label>Videos o audios de referencia <i class="tip-btn" onclick="tog('t6k')">i</i></label>
-      <div class="tip-box" id="t6k">Videos donde explicas tu servicio, notas de voz donde describes tu proceso, entrevistas. Todo sirve para entrenar la IA con tu estilo de comunicación real.</div>
-      <div class="file-zone">
-        <input type="file" multiple accept=".mp4,.mov,.mp3,.m4a,.wav,.ogg" onchange="addFiles(this,'mediaFiles')">
-        <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-        <div class="fz-title">Subir video o audio</div>
-        <div class="fz-sub">MP4, MOV, MP3, M4A</div>
-      </div>
-      <div class="file-list" id="mediaFiles"></div>
-    </div>
+    <div class="file-list" id="docFiles"></div>
   </div>
 </div>
 
-<!-- ══════════════════ PASO 7 ══════════════════ -->
-<div class="sec" id="s7">
+<!-- ══════════════════ SECCIÓN 6 — BRANDING ══════════════════ -->
+<div class="sec" id="s6">
   <div class="sec-hdr">
     <div class="sec-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
     <div><div class="sec-title">Branding e identidad visual</div><div class="sec-sub">Para crear contenido, videos y materiales con tu marca</div></div>
@@ -733,12 +659,12 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
     Para crear tu clon digital, videos automatizados y materiales de marketing necesitamos tu identidad visual completa. Entre más claro sea tu branding, mejor quedarán todos los materiales.
   </div>
 
-  <div class="dvd">Logo y archivos de marca</div>
+  <div class="dvd">Logo y fotos</div>
 
   <div class="row">
     <div class="f optional">
-      <label>Logo principal (PNG fondo transparente) <i class="tip-btn" onclick="tog('t7a')">i</i></label>
-      <div class="tip-box" id="t7a">Necesitamos el logo en PNG con fondo transparente, mínimo <strong>500x500px</strong>. Si solo tienes JPG o el logo sobre fondo blanco, súbelo igual — lo podemos trabajar. Si no tienes logo aún, nosotros lo diseñamos.</div>
+      <label>Logo principal (PNG fondo transparente) <i class="tip-btn" onclick="tog('t6a')">i</i></label>
+      <div class="tip-box" id="t6a">PNG con fondo transparente, mínimo <strong>500x500px</strong>. Si solo tienes JPG, súbelo igual — lo trabajamos. Si no tienes logo, nosotros lo diseñamos.</div>
       <div class="file-zone">
         <input type="file" accept=".png,.svg,.ai,.eps,.pdf" onchange="addFiles(this,'logoFiles')">
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
@@ -748,8 +674,8 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
       <div class="file-list" id="logoFiles"></div>
     </div>
     <div class="f optional">
-      <label>Fotos profesionales <i class="tip-btn" onclick="tog('t7b')">i</i></label>
-      <div class="tip-box" id="t7b">Mínimo 5 fotos tuyas con buena iluminación y fondo neutro. Se usan para materiales de marketing y contenido. Si no tienes fotos profesionales, te guiamos cómo tomarlas con el celular.</div>
+      <label>Fotos profesionales (mínimo 5) <i class="tip-btn" onclick="tog('t6b')">i</i></label>
+      <div class="tip-box" id="t6b">Fotos tuyas con buena iluminación y fondo neutro. Se usan para materiales de marketing. Si no tienes fotos profesionales, te guiamos cómo tomarlas con el celular.</div>
       <div class="file-zone">
         <input type="file" multiple accept=".jpg,.jpeg,.png,.webp" onchange="addFiles(this,'photoFiles')">
         <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
@@ -760,13 +686,13 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
     </div>
   </div>
 
-  <div class="dvd">Paleta de colores de tu marca</div>
+  <div class="dvd">Paleta de colores</div>
 
   <div class="ibox">Si no tienes colores definidos, cuéntanos qué estilo te gusta (ej: <strong>azul corporativo y blanco</strong>, <strong>verde natural y beige</strong>) y nosotros los definimos por ti.</div>
 
   <div class="f optional">
-    <label>Colores de tu marca <i class="tip-btn" onclick="tog('t7c')">i</i></label>
-    <div class="tip-box" id="t7c">Haz clic en cada cuadro de color para seleccionar el tono exacto. Si sabes el código hex (ej: <strong>#00AEEF</strong>), escríbelo directamente. Si no tienes colores definidos, describe qué estilo te gusta en el campo de texto.</div>
+    <label>Colores de tu marca <i class="tip-btn" onclick="tog('t6c')">i</i></label>
+    <div class="tip-box" id="t6c">Haz clic en cada cuadro para seleccionar el tono exacto. Si sabes el código hex (ej: <strong>#00AEEF</strong>), escríbelo en el campo de texto.</div>
     <div class="color-row">
       <div class="color-chip-wrap"><div class="color-chip"><input type="color" id="color1" value="#0A1E3D"></div><div class="color-chip-lbl">Principal</div></div>
       <div class="color-chip-wrap"><div class="color-chip"><input type="color" id="color2" value="#00AEEF"></div><div class="color-chip-lbl">Acento</div></div>
@@ -778,47 +704,59 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
     </div>
   </div>
 
-  <div class="f optional">
-    <label>Tipografía / fuente que usas <i class="tip-btn" onclick="tog('t7d')">i</i></label>
-    <div class="tip-box" id="t7d">¿Hay alguna fuente específica en tu logo o materiales? Ej: <strong>Montserrat, Helvetica, Garamond</strong>. Si no sabes el nombre, describe el estilo: "letra moderna y limpia", "letra elegante con serif".</div>
-    <input type="text" id="typography" placeholder="Ej. Montserrat Bold para títulos, Montserrat Regular para texto">
-  </div>
-
-  <div class="f optional">
-    <label>Referencias visuales — competidores o marcas que te gustan <i class="tip-btn" onclick="tog('t7e')">i</i></label>
-    <div class="tip-box" id="t7e">Nombres o links de agencias, colegas o marcas cuyo estilo visual te parece atractivo. Sirve de guía para diseñar tus materiales. No tiene que ser de tu industria.</div>
-    <textarea id="visualRef" placeholder="Ej. Me gusta el estilo de Progressive Insurance, el tono de Morgan & Morgan, el diseño de mi colega Juan Pérez en @juanperez_seguros..."></textarea>
+  <div class="row">
+    <div class="f optional">
+      <label>Tipografía / fuente <i class="tip-btn" onclick="tog('t6d')">i</i></label>
+      <div class="tip-box" id="t6d">¿Hay alguna fuente específica en tu logo? Ej: <strong>Montserrat, Helvetica</strong>. Si no sabes el nombre, describe el estilo: "letra moderna y limpia".</div>
+      <input type="text" id="typography" placeholder="Ej. Montserrat Bold para títulos">
+    </div>
+    <div class="f optional">
+      <label>Referencias visuales / marcas que te gustan <i class="tip-btn" onclick="tog('t6e')">i</i></label>
+      <div class="tip-box" id="t6e">Nombres de agencias, colegas o marcas cuyo estilo visual te parece atractivo. No tiene que ser de tu industria.</div>
+      <textarea id="visualRef" placeholder="Ej. Me gusta el estilo de Progressive Insurance, el tono de Morgan & Morgan..."></textarea>
+    </div>
   </div>
 
   <div class="dvd">Video de referencia</div>
 
   <div class="f optional">
-    <label>¿Tienes algún video tuyo hablando? <i class="tip-btn" onclick="tog('t7f')">i</i></label>
-    <div class="tip-box" id="t7f">Cualquier video donde aparezcas hablando — aunque sea informal. Se usa como referencia para el clon digital y para capturar tu manera de hablar y gesticular. No tiene que ser profesional.</div>
-    <div class="file-zone">
-      <input type="file" accept=".mp4,.mov,.avi,.webm" onchange="addFiles(this,'refVideoFiles')">
-      <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-      <div class="fz-title">Subir video de referencia</div>
-      <div class="fz-sub">MP4, MOV — cualquier video informal tuyo</div>
+    <label>¿Tienes algún video tuyo hablando? <i class="tip-btn" onclick="tog('t6f')">i</i></label>
+    <div class="tip-box" id="t6f">Cualquier video donde aparezcas hablando — aunque sea informal. Se usa como referencia para el clon digital y para capturar tu manera de hablar. No tiene que ser profesional.</div>
+    <div class="drive-zone">
+      <div class="drive-zone-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00AEEF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+      </div>
+      <div class="drive-zone-info">
+        <strong>Subir video de referencia a Google Drive</strong>
+        <span>MP4, MOV — cualquier video informal tuyo hablando</span>
+      </div>
+      <a href="javascript:openDrive('refVideo')" class="drive-btn">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Abrir Drive
+      </a>
     </div>
-    <div class="file-list" id="refVideoFiles"></div>
+    <div class="f" style="margin-top:8px;margin-bottom:0">
+      <input type="text" id="refVideoUrl" placeholder="Pega aquí el link del video en Drive (opcional)">
+    </div>
   </div>
 </div>
 
-<!-- ══════════════════ PASO 8 ══════════════════ -->
-<div class="sec" id="s8">
+<!-- ══════════════════ SECCIÓN 7 — CLON IA ══════════════════ -->
+<div class="sec" id="s7">
   <div class="sec-hdr">
     <div class="sec-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
-    <div><div class="sec-title">Clon digital y voz IA</div><div class="sec-sub">HeyGen + ElevenLabs — tu versión digital automatizada</div></div>
+    <div><div class="sec-title">Clon digital y contenido</div><div class="sec-sub">HeyGen + ElevenLabs + producción de contenido automatizado</div></div>
   </div>
 
   <div class="ibox">
-    Tu <strong>clon digital</strong> es un avatar de video que habla con tu cara y voz. Se usa para crear contenido automático para redes sociales sin que tengas que grabar nada. Tu <strong>voz clonada</strong> se usa en el voice bot para que suene como tú cuando llama a tus leads.
+    Tu <strong>clon digital</strong> es un avatar de video que habla con tu cara y voz. Se usa para crear contenido automático para redes sociales sin que grabes nada. Tu <strong>voz clonada</strong> hace que el voice bot suene exactamente como tú.
   </div>
 
+  <div class="dvd">Clon de video — HeyGen</div>
+
   <div class="f">
-    <label>¿Quieres clon digital de video (HeyGen)? <i class="tip-btn" onclick="tog('t8a')">i</i></label>
-    <div class="tip-box" id="t8a"><strong>HeyGen</strong> crea un avatar de video realista usando tu cara. Necesitamos un video tuyo de entrenamiento de al menos 2 minutos. Si seleccionas "Sí", te enviamos la guía de grabación detallada.</div>
+    <label>¿Quieres clon digital de video (HeyGen)? <i class="tip-btn" onclick="tog('t7a')">i</i></label>
+    <div class="tip-box" id="t7a"><strong>HeyGen</strong> crea un avatar de video realista usando tu cara. Necesitamos un video de entrenamiento de al menos 2 minutos. Si seleccionas "Sí", te enviamos la guía de grabación detallada.</div>
     <div class="radio-group" id="heygenStatus">
       <div class="radio-item sel" onclick="selRad(this,'heygenStatus')"><input type="radio" name="hg" value="si"><div class="radio-dot"></div><span class="radio-lbl">Sí, quiero clon digital</span></div>
       <div class="radio-item" onclick="selRad(this,'heygenStatus')"><input type="radio" name="hg" value="no"><div class="radio-dot"></div><span class="radio-lbl">No por ahora</span></div>
@@ -827,8 +765,8 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
   </div>
 
   <div class="f optional">
-    <label>¿Ya grabaste el video de entrenamiento HeyGen? <i class="tip-btn" onclick="tog('t8b')">i</i></label>
-    <div class="tip-box" id="t8b">El video de entrenamiento debe ser: <strong>mínimo 2 minutos</strong>, buena iluminación, fondo neutro, habla de frente a la cámara en tono natural, sin música de fondo. Si no lo has grabado, te enviamos la guía completa.</div>
+    <label>¿Ya grabaste el video de entrenamiento HeyGen? <i class="tip-btn" onclick="tog('t7b')">i</i></label>
+    <div class="tip-box" id="t7b">El video debe ser: <strong>mínimo 2 minutos</strong>, buena iluminación, fondo neutro, habla de frente a la cámara sin música de fondo. Si no lo has grabado, te enviamos la guía.</div>
     <div class="radio-group" id="heygenVideoStatus">
       <div class="radio-item" onclick="selRad(this,'heygenVideoStatus')"><input type="radio" name="hgv" value="si"><div class="radio-dot"></div><span class="radio-lbl">Sí, ya lo tengo</span></div>
       <div class="radio-item sel" onclick="selRad(this,'heygenVideoStatus')"><input type="radio" name="hgv" value="no"><div class="radio-dot"></div><span class="radio-lbl">No, necesito la guía</span></div>
@@ -836,21 +774,31 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
   </div>
 
   <div class="f optional">
-    <label>Subir videos de entrenamiento (hasta 5) <i class="tip-btn" onclick="tog('t8c')">i</i></label>
-    <div class="tip-box" id="t8c">Sube entre 1 y 5 videos cortos de 15 segundos cada uno. Recomendable subir los 5 para obtener el mejor resultado.</div>
-    <div class="file-zone">
-      <input type="file" accept=".mp4,.mov" multiple onchange="addHeygenVideos(this)">
-      <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-      <div class="fz-title">Subir videos de entrenamiento (hasta 5)</div>
-      <div class="fz-sub">MP4 o MOV — 15 segundos por video — hasta 5 clips</div>
+    <label>Videos de entrenamiento HeyGen (hasta 5) <i class="tip-btn" onclick="tog('t7c')">i</i></label>
+    <div class="tip-box" id="t7c">Sube entre 1 y 5 videos de 15 segundos cada uno. Los 5 garantizan el mejor resultado. Por el tamaño, se suben a Google Drive.</div>
+    <div class="drive-zone">
+      <div class="drive-zone-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#00AEEF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+      </div>
+      <div class="drive-zone-info">
+        <strong>Subir videos de entrenamiento a Google Drive</strong>
+        <span>MP4 o MOV — hasta 5 clips de ~15 segundos cada uno</span>
+      </div>
+      <a href="javascript:openDrive('heygen')" class="drive-btn">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        Abrir Drive
+      </a>
     </div>
-    <div id="heygenVideoError" style="display:none;color:var(--red);font-size:11px;font-weight:600;margin-top:6px;padding:6px 10px;background:#E24B4A15;border:1px solid #E24B4A33;border-radius:6px;">⚠ Máximo 5 videos permitidos</div>
-    <div class="file-list" id="heygenVideo"></div>
+    <div class="f" style="margin-top:8px;margin-bottom:0">
+      <input type="text" id="heygenVideoUrl" placeholder="Pega aquí el link de la carpeta de Drive con tus videos (opcional)">
+    </div>
   </div>
 
+  <div class="dvd">Clon de voz — ElevenLabs</div>
+
   <div class="f">
-    <label>¿Quieres clonar tu voz (ElevenLabs)? <i class="tip-btn" onclick="tog('t8d')">i</i></label>
-    <div class="tip-box" id="t8d"><strong>ElevenLabs</strong> clona tu voz a partir de una grabación de audio. Tu voice bot sonará exactamente como tú cuando llame a tus leads. Necesitamos una grabación limpia de mínimo 2 minutos.</div>
+    <label>¿Quieres clonar tu voz (ElevenLabs)? <i class="tip-btn" onclick="tog('t7d')">i</i></label>
+    <div class="tip-box" id="t7d"><strong>ElevenLabs</strong> clona tu voz a partir de una grabación de audio. Tu voice bot sonará exactamente como tú cuando llame a tus leads.</div>
     <div class="radio-group" id="elevenStatus">
       <div class="radio-item sel" onclick="selRad(this,'elevenStatus')"><input type="radio" name="el" value="si"><div class="radio-dot"></div><span class="radio-lbl">Sí, quiero clonar mi voz</span></div>
       <div class="radio-item" onclick="selRad(this,'elevenStatus')"><input type="radio" name="el" value="no"><div class="radio-dot"></div><span class="radio-lbl">No por ahora</span></div>
@@ -859,12 +807,12 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
 
   <div class="ibox warn">
     <strong>Para la grabación de voz necesitamos:</strong><br>
-    Audio limpio de mínimo 2 minutos • Sin música de fondo • Sin eco • Hablando en tono natural, como si explicaras tu servicio a un cliente
+    Audio limpio de mínimo 2 minutos · Sin música de fondo · Sin eco · Hablando en tono natural, como si explicaras tu servicio a un cliente
   </div>
 
   <div class="f optional">
-    <label>Grabación de voz para ElevenLabs <i class="tip-btn" onclick="tog('t8e')">i</i></label>
-    <div class="tip-box" id="t8e">Graba en un cuarto silencioso, sin ventilador ni TV de fondo. Puedes grabar con el celular — la calidad del micrófono del iPhone o Samsung es suficiente.</div>
+    <label>Grabación de voz para ElevenLabs <i class="tip-btn" onclick="tog('t7e')">i</i></label>
+    <div class="tip-box" id="t7e">Graba en un cuarto silencioso. Puedes grabar con el celular — la calidad del micrófono del iPhone o Samsung es suficiente.</div>
     <div class="file-zone">
       <input type="file" accept=".mp3,.m4a,.wav,.ogg" onchange="addFiles(this,'voiceAudio')">
       <svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
@@ -874,42 +822,144 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
     <div class="file-list" id="voiceAudio"></div>
   </div>
 
-  <div class="f optional">
-    <label>Nombre que quieres para tu asistente de IA <i class="tip-btn" onclick="tog('t8f')">i</i></label>
-    <div class="tip-box" id="t8f">¿Cómo se va a presentar tu chatbot y voice bot con los clientes? Puede ser un nombre real o de marca. Ej: <strong>Sofía</strong>, <strong>Alex</strong>, <strong>Asistente de Johana Martínez</strong>.</div>
-    <input type="text" id="botName" placeholder="Ej. Sofía, Alex, Asistente Virtual">
+  <div class="dvd">Configuración del asistente</div>
+
+  <div class="row">
+    <div class="f optional">
+      <label>Nombre de tu asistente de IA <i class="tip-btn" onclick="tog('t7f')">i</i></label>
+      <div class="tip-box" id="t7f">¿Cómo se presentará tu chatbot y voice bot? Puede ser un nombre o de marca. Ej: <strong>Sofía</strong>, <strong>Alex</strong>.</div>
+      <input type="text" id="botName" placeholder="Ej. Sofía, Alex, Asistente Virtual">
+    </div>
+    <div class="f optional">
+      <label>Idioma(s) de atención <i class="tip-btn" onclick="tog('t7g')">i</i></label>
+      <div class="tip-box" id="t7g">El sistema puede responder en varios idiomas automáticamente. Para mercado latinoamericano en USA recomendamos <strong>Español + Inglés</strong>.</div>
+      <div class="cb-grid" style="grid-template-columns:repeat(2,1fr)">
+        <div class="cb-item chk" onclick="tc(this)"><input type="checkbox" id="lang_es" value="Español" checked><div class="cb-box"></div><span class="cb-lbl">Español</span></div>
+        <div class="cb-item chk" onclick="tc(this)"><input type="checkbox" id="lang_en" value="Inglés" checked><div class="cb-box"></div><span class="cb-lbl">Inglés</span></div>
+        <div class="cb-item" onclick="tc(this)"><input type="checkbox" id="lang_pt" value="Portugués"><div class="cb-box"></div><span class="cb-lbl">Portugués</span></div>
+        <div class="cb-item" onclick="tc(this)"><input type="checkbox" id="lang_other" value="Otro"><div class="cb-box"></div><span class="cb-lbl">Otro</span></div>
+      </div>
+    </div>
   </div>
 
-  <div class="f optional">
-    <label>Idioma(s) de atención <i class="tip-btn" onclick="tog('t8g')">i</i></label>
-    <div class="tip-box" id="t8g">El sistema puede responder en varios idiomas automáticamente. Para mercado latinoamericano en USA recomendamos <strong>Español + Inglés</strong>.</div>
-    <div class="cb-grid" style="grid-template-columns:repeat(4,1fr)">
-      <div class="cb-item" onclick="tc(this)"><input type="checkbox"><div class="cb-box"></div><span class="cb-lbl">Español</span></div>
-      <div class="cb-item chk" onclick="tc(this)"><input type="checkbox" checked><div class="cb-box"></div><span class="cb-lbl">Inglés</span></div>
-      <div class="cb-item" onclick="tc(this)"><input type="checkbox"><div class="cb-box"></div><span class="cb-lbl">Portugués</span></div>
-      <div class="cb-item" onclick="tc(this)"><input type="checkbox"><div class="cb-box"></div><span class="cb-lbl">Otro</span></div>
+  <div class="dvd">Producción de contenido</div>
+
+  <div class="f">
+    <label>Palabras que SÍ usas <i class="tip-btn" onclick="tog('t7h')">i</i></label>
+    <div class="tip-box" id="t7h">Palabras o frases que son parte de tu voz. La IA las incluirá en tus guiones. Mínimo 10.</div>
+    <textarea id="palabrasSi" rows="3" placeholder="Ej. transformar, proteger, familia, tranquilidad, resultados, sin excusas..."></textarea>
+  </div>
+
+  <div class="f">
+    <label>Palabras que NUNCA usas <i class="tip-btn" onclick="tog('t7i')">i</i></label>
+    <div class="tip-box" id="t7i">Palabras que no van con tu marca. La IA nunca las incluirá en tus guiones. Mínimo 5.</div>
+    <textarea id="palabrasNo" rows="2" placeholder="Ej. dieta, restricción, prohibido, barato, descuento..."></textarea>
+  </div>
+
+  <div class="f">
+    <label>Hashtags de tu marca <i class="tip-btn" onclick="tog('t7j')">i</i></label>
+    <div class="tip-box" id="t7j">Los hashtags que usas en redes sociales. Incluye el símbolo #. Mínimo 5. Se usarán en todos los posts automatizados.</div>
+    <textarea id="hashtagsMarca" rows="2" placeholder="Ej. #segurosdefamilia #tranquilidadfinanciera #miami #latinos"></textarea>
+  </div>
+
+  <div class="row">
+    <div class="f">
+      <label>Videos por semana <i class="tip-btn" onclick="tog('t7k')">i</i></label>
+      <div class="tip-box" id="t7k">¿Cuántos videos cortos quieres publicar por semana? Recomendamos 3 para comenzar.</div>
+      <select id="videosSemana">
+        <option value="">Seleccionar...</option>
+        <option value="1">1 video / semana</option>
+        <option value="2">2 videos / semana</option>
+        <option value="3" selected>3 videos / semana</option>
+        <option value="5">5 videos / semana</option>
+        <option value="7">7 videos / semana (diario)</option>
+      </select>
+    </div>
+    <div class="f">
+      <label>Estilo de B-roll <i class="tip-btn" onclick="tog('t7l')">i</i></label>
+      <div class="tip-box" id="t7l">El B-roll son las imágenes de contexto que aparecen mientras habla tu avatar.</div>
+      <select id="estiloBroll">
+        <option value="">Seleccionar...</option>
+        <option value="Realista">Realista (fotografía / video real)</option>
+        <option value="Ilustrado">Ilustrado (digital art, vectores)</option>
+        <option value="Cinematico">Cinemático</option>
+        <option value="Minimalista">Minimalista (fondos limpios)</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="f">
+      <label>Plataformas de publicación <i class="tip-btn" onclick="tog('t7m')">i</i></label>
+      <div class="tip-box" id="t7m">¿En qué plataformas quieres publicar tus videos automáticamente?</div>
+      <div class="cb-grid" style="grid-template-columns:repeat(2,1fr)">
+        <div class="cb-item chk" onclick="tc(this)"><input type="checkbox" id="plat_tiktok" value="TikTok" checked><div class="cb-box"></div><span class="cb-lbl">TikTok</span></div>
+        <div class="cb-item chk" onclick="tc(this)"><input type="checkbox" id="plat_reels" value="Instagram Reels" checked><div class="cb-box"></div><span class="cb-lbl">Reels</span></div>
+        <div class="cb-item" onclick="tc(this)"><input type="checkbox" id="plat_shorts" value="YouTube Shorts"><div class="cb-box"></div><span class="cb-lbl">Shorts</span></div>
+        <div class="cb-item" onclick="tc(this)"><input type="checkbox" id="plat_linkedin" value="LinkedIn"><div class="cb-box"></div><span class="cb-lbl">LinkedIn</span></div>
+      </div>
+    </div>
+    <div class="f">
+      <label>Formatos de video <i class="tip-btn" onclick="tog('t7n')">i</i></label>
+      <div class="tip-box" id="t7n"><strong>Submagic:</strong> Tu avatar habla + subtítulos animados + B-roll.<br><strong>HeyGen Studio:</strong> Escenas diseñadas con tu look.<br><strong>HeyGen Agent:</strong> 100% automático, ideal para volumen.</div>
+      <div class="cb-grid" style="grid-template-columns:1fr">
+        <div class="cb-item chk" onclick="tc(this)"><input type="checkbox" id="fmt_submagic" value="submagic" checked><div class="cb-box"></div><span class="cb-lbl">Submagic</span></div>
+        <div class="cb-item chk" onclick="tc(this)"><input type="checkbox" id="fmt_studio" value="heygen_studio" checked><div class="cb-box"></div><span class="cb-lbl">HeyGen Studio</span></div>
+        <div class="cb-item chk" onclick="tc(this)"><input type="checkbox" id="fmt_agent" value="heygen_agent" checked><div class="cb-box"></div><span class="cb-lbl">HeyGen Agent</span></div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════ PASO 9 ══════════════════ -->
-<div class="sec" id="s9">
+<!-- ══════════════════ SECCIÓN 8 — ACCESOS ══════════════════ -->
+<div class="sec" id="s8">
   <div class="sec-hdr">
     <div class="sec-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
-    <div><div class="sec-title">Accesos y herramientas actuales</div><div class="sec-sub">Para conectar todo sin interrupciones durante la implementación</div></div>
+    <div><div class="sec-title">Accesos, herramientas y legal</div><div class="sec-sub">Para conectar todo sin interrupciones durante la implementación</div></div>
   </div>
 
   <div class="ibox">Todos los accesos se manejan de forma segura. Nunca almacenamos contraseñas — solo usamos los emails para darte acceso a las herramientas.</div>
 
-  <div class="f">
-    <label>Email de Meta Business Manager (para darte acceso) <i class="tip-btn" onclick="tog('t9a')">i</i></label>
-    <div class="tip-box" id="t9a">El email con el que entras a <strong>business.facebook.com</strong>. Lo necesitamos para conectar tu cuenta publicitaria al CRM. Solo necesitamos el email — nunca la contraseña.</div>
-    <input type="email" id="metaEmail" placeholder="correo@gmail.com">
+  <div class="dvd">Herramientas actuales</div>
+
+  <div class="row">
+    <div class="f">
+      <label>¿Usas algún CRM actualmente? <i class="tip-btn" onclick="tog('t8a')">i</i></label>
+      <div class="tip-box" id="t8a">Un CRM es donde guardas información de clientes. Si tienes datos guardados, podemos importarlos al nuevo sistema.</div>
+      <select id="currentCRM">
+        <option value="">Seleccionar...</option>
+        <option>No uso ninguno — todo en el celular</option>
+        <option>Excel / Google Sheets</option>
+        <option>HubSpot</option>
+        <option>Zoho</option>
+        <option>Otro CRM</option>
+        <option>Ya uso un CRM avanzado</option>
+      </select>
+    </div>
+    <div class="f">
+      <label>¿Cuántos contactos tienes aproximadamente? <i class="tip-btn" onclick="tog('t8b')">i</i></label>
+      <div class="tip-box" id="t8b">Clientes actuales + prospectos en tu lista. Determina el tiempo de la importación inicial.</div>
+      <select id="contactCount">
+        <option value="">Seleccionar...</option>
+        <option>Menos de 100</option>
+        <option>100 a 500</option>
+        <option>500 a 2,000</option>
+        <option>Más de 2,000</option>
+      </select>
+    </div>
   </div>
 
   <div class="f">
-    <label>¿Tienes dominio propio? <i class="tip-btn" onclick="tog('t9b')">i</i></label>
-    <div class="tip-box" id="t9b">Un <strong>dominio</strong> es la dirección web de tu negocio. Ej: <strong>johana-seguros.com</strong>. Se necesita para tu email profesional y landing page. Si no tienes, nosotros te ayudamos a conseguir uno (~$12/año).</div>
+    <label>Email de Meta Business Manager (para acceso) <i class="tip-btn" onclick="tog('t8c')">i</i></label>
+    <div class="tip-box" id="t8c">El email con el que entras a <strong>business.facebook.com</strong>. Lo necesitamos para conectar tu cuenta publicitaria al CRM. Solo el email — nunca la contraseña.</div>
+    <input type="email" id="metaEmail" placeholder="correo@gmail.com">
+  </div>
+
+  <div class="dvd">Dominio y email corporativo</div>
+
+  <div class="f">
+    <label>¿Tienes dominio propio? <i class="tip-btn" onclick="tog('t8d')">i</i></label>
+    <div class="tip-box" id="t8d">Un dominio es la dirección web de tu negocio. Ej: <strong>johana-seguros.com</strong>. Se necesita para tu email profesional y landing page.</div>
     <select id="hasDomain">
       <option value="">Seleccionar...</option>
       <option>Sí, tengo dominio</option>
@@ -920,13 +970,13 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
 
   <div class="row">
     <div class="f optional">
-      <label>Nombre del dominio <i class="tip-btn" onclick="tog('t9c')">i</i></label>
-      <div class="tip-box" id="t9c">Escribe el dominio sin "www" ni "https://". Ej: <strong>johana-seguros.com</strong></div>
+      <label>Nombre del dominio <i class="tip-btn" onclick="tog('t8e')">i</i></label>
+      <div class="tip-box" id="t8e">Sin "www" ni "https://". Ej: <strong>tunegocio.com</strong></div>
       <input type="text" id="domainName" placeholder="Ej. tunegocio.com">
     </div>
     <div class="f optional">
-      <label>¿Dónde compraste el dominio? <i class="tip-btn" onclick="tog('t9d')">i</i></label>
-      <div class="tip-box" id="t9d">El registrador es donde compraste el dominio. Necesitamos saber dónde está para configurar los registros de email y conectar el sistema.</div>
+      <label>¿Dónde compraste el dominio? <i class="tip-btn" onclick="tog('t8f')">i</i></label>
+      <div class="tip-box" id="t8f">Necesitamos saber dónde está para configurar los registros de email.</div>
       <select id="domainReg">
         <option value="">Seleccionar...</option>
         <option>Cloudflare</option>
@@ -940,8 +990,8 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
   </div>
 
   <div class="f">
-    <label>¿Tienes Mailgun configurado? <i class="tip-btn" onclick="tog('t9e')">i</i></label>
-    <div class="tip-box" id="t9e"><strong>Mailgun</strong> es el servicio que permite al sistema enviar emails desde tu dominio (ej: <strong>onboarding@tunegocio.com</strong>). Si no tienes, nosotros lo configuramos — solo necesitamos acceso a tu DNS. Sin Mailgun, los emails salen con dominio genérico.</div>
+    <label>¿Tienes Mailgun configurado? <i class="tip-btn" onclick="tog('t8g')">i</i></label>
+    <div class="tip-box" id="t8g"><strong>Mailgun</strong> permite al sistema enviar emails desde tu dominio (ej: <strong>hola@tunegocio.com</strong>). Si no tienes, nosotros lo configuramos.</div>
     <select id="mailgunStatus">
       <option value="">Seleccionar...</option>
       <option>Sí, ya configurado</option>
@@ -950,43 +1000,68 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
     </select>
   </div>
 
-  <div class="f">
-    <label>¿Usas algún CRM actualmente? <i class="tip-btn" onclick="tog('t9f')">i</i></label>
-    <div class="tip-box" id="t9f">Un <strong>CRM</strong> es donde guardas información de clientes y prospectos. Ejemplos: <strong>Excel, HubSpot, Zoho, Salesforce, o simplemente tu teléfono</strong>. Si tienes datos guardados, podemos importarlos al nuevo sistema.</div>
-    <select id="currentCRM">
-      <option value="">Seleccionar...</option>
-      <option>No uso ninguno — todo en el celular</option>
-      <option>Excel / Google Sheets</option>
-      <option>HubSpot</option>
-      <option>Zoho</option>
-      <option>Otro CRM</option>
-      <option>Ya uso un CRM avanzado</option>
-    </select>
-  </div>
+  <div class="dvd">Cumplimiento legal — USA <span style="font-size:9px;font-weight:400;text-transform:none;letter-spacing:0;color:#3A5A80">(omitir si no operas en USA)</span></div>
 
   <div class="f">
-    <label>¿Cuántos contactos tienes aproximadamente? <i class="tip-btn" onclick="tog('t9g')">i</i></label>
-    <div class="tip-box" id="t9g">Número de clientes actuales + prospectos en tu lista. Esto determina cuánto tiempo toma la importación inicial.</div>
-    <select id="contactCount">
-      <option value="">Seleccionar...</option>
-      <option>Menos de 100</option>
-      <option>100 a 500</option>
-      <option>500 a 2,000</option>
-      <option>Más de 2,000</option>
-    </select>
+    <label>Estado donde opera <i class="tip-btn" onclick="tog('t8h')">i</i> <span class="na-badge" onclick="toggleNA(this)">No aplica</span></label>
+    <div class="tip-box" id="t8h">El estado de USA donde principalmente atiendes clientes. Algunos estados tienen regulaciones específicas.</div>
+    <input type="text" id="state" placeholder="Ej. Florida, Texas, California">
+    <div class="na-overlay">Marcado como No aplica</div>
   </div>
 
-  <div class="f optional">
-    <label>¿Cómo prefieres que te contactemos durante la implementación? <i class="tip-btn" onclick="tog('t9h')">i</i></label>
-    <div class="tip-box" id="t9h">Durante los primeros 7 días necesitaremos tu aprobación en algunos pasos clave.</div>
-    <select id="preferredContact">
-      <option value="">Seleccionar...</option>
-      <option>WhatsApp (más rápido — recomendado)</option>
-      <option>Email</option>
-      <option>Videollamada semanal</option>
-      <option>WhatsApp + videollamada semanal</option>
-    </select>
+  <div class="row">
+    <div class="f">
+      <label>¿Trabaja de forma independiente o bajo broker? <i class="tip-btn" onclick="tog('t8i')">i</i></label>
+      <div class="tip-box" id="t8i">Si trabajas bajo un broker, algunas configuraciones como el registro A2P pueden depender de sus políticas.</div>
+      <select id="brokerStatus">
+        <option value="">Seleccionar...</option>
+        <option>Independiente</option>
+        <option>Bajo un broker</option>
+        <option>Ambos / Mixto</option>
+        <option>No aplica</option>
+      </select>
+    </div>
+    <div class="f">
+      <label>Estado del registro A2P <i class="tip-btn" onclick="tog('t8j')">i</i> <span class="na-badge" onclick="toggleNA(this)">No aplica</span></label>
+      <div class="tip-box" id="t8j">El <strong>registro A2P 10DLC</strong> es obligatorio para enviar SMS masivos en USA. Nosotros gestionamos el proceso completo.</div>
+      <select id="a2pStatus">
+        <option value="">Seleccionar...</option>
+        <option>Ya tengo registro A2P activo</option>
+        <option>No tengo — necesito registrarme</option>
+        <option>Mi broker lo maneja</option>
+        <option>No sé qué es esto</option>
+      </select>
+      <div class="na-overlay">Marcado como No aplica</div>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="f">
+      <label>¿Tienes casilla de consentimiento TCPA? <i class="tip-btn" onclick="tog('t8k')">i</i> <span class="na-badge" onclick="toggleNA(this)">No aplica</span></label>
+      <div class="tip-box" id="t8k">La ley TCPA exige consentimiento ESCRITO de cada persona antes de enviarle mensajes automáticos. Nosotros la configuramos correctamente en tus formularios.</div>
+      <select id="tcpaStatus">
+        <option value="">Seleccionar...</option>
+        <option>Sí, ya tengo consentimiento configurado</option>
+        <option>No, necesito configurarlo</option>
+        <option>No sé</option>
+      </select>
+      <div class="na-overlay">Marcado como No aplica</div>
+    </div>
+    <div class="f">
+      <label>¿Tienes EIN (Tax ID de negocio)? <i class="tip-btn" onclick="tog('t8l')">i</i> <span class="na-badge" onclick="toggleNA(this)">No aplica</span></label>
+      <div class="tip-box" id="t8l">El <strong>EIN</strong> es el número de identificación fiscal de tu negocio en USA. Se necesita para el registro A2P.</div>
+      <select id="einStatus">
+        <option value="">Seleccionar...</option>
+        <option>Sí, tengo EIN</option>
+        <option>No tengo — uso SSN</option>
+        <option>En proceso de obtenerlo</option>
+        <option>No aplica</option>
+      </select>
+      <div class="na-overlay">Marcado como No aplica</div>
+    </div>
+  </div>
+
+  <div class="dvd">Notas finales</div>
 
   <div class="f optional">
     <label>Notas adicionales o solicitudes especiales</label>
@@ -999,7 +1074,7 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#EF9F27" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
       Campos que quedaron pendientes
     </h3>
-    <p style="font-size:11px;color:#C8883A;margin-bottom:.75rem">Puedes enviar el formulario ahora. Completaremos la configuración con lo que tenemos y te avisamos qué información falta para terminar.</p>
+    <p style="font-size:11px;color:#C8883A;margin-bottom:.75rem">Puedes enviar el formulario ahora. Completaremos la configuración con lo que tenemos y te avisamos qué información falta.</p>
     <ul id="missingList"></ul>
   </div>
 </div>
@@ -1008,7 +1083,7 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
 
 <!-- FOOTER -->
 <div class="ftr" id="ftr">
-  <span class="step-cnt" id="scnt">Paso 1 de 9</span>
+  <span class="step-cnt" id="scnt">Paso 1 de 8</span>
   <div class="btns">
     <button class="btn btn-back" id="bback" onclick="prev()" style="display:none">← Anterior</button>
     <button class="btn btn-next" id="bnext" onclick="next()">Continuar →</button>
@@ -1029,8 +1104,19 @@ Respuesta: Claro, pero déjame mostrarte lo que pasa si esperamos 6 meses..."></
 </div>
 
 <script>
-let cur=1,tot=9;
-const req=[
+/* ── CONFIG ── */
+var cur=1,tot=8;
+var CLIENT_ID=null;
+var SUPABASE_URL='https://ydbzawqjfwoodotuwryb.supabase.co';
+var SUPABASE_ANON_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlkYnphd3FqZndvb2RvdHV3cnliIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc5MTEwOTgsImV4cCI6MjA5MzQ4NzA5OH0.HW0bL_cpWkITUaQQMrhM95yCfE2QeZsNNkzYBU-uaAc';
+var WEBHOOK_SECCION='https://nexoraia-51-n8n.tndpve.easypanel.host/webhook/onboarding-seccion';
+var WEBHOOK_FINAL='https://nexoraia-51-n8n.tndpve.easypanel.host/webhook/onboarding-cliente';
+/* Reemplazar con la URL real de la carpeta de Drive compartida con el cliente */
+var DRIVE_VIDEOS_URL='https://drive.google.com/drive/folders/PLACEHOLDER_DRIVE_FOLDER_ID';
+
+var SECTION_NAMES=['','negocio','contacto','digital','servicios','conocimiento','branding','clon','accesos'];
+
+var req=[
   ['ownerName','Nombre completo'],
   ['bizName','Nombre del negocio'],
   ['industry','Industria'],
@@ -1042,48 +1128,224 @@ const req=[
   ['idealClient','Cliente ideal'],
   ['tone','Tono de comunicación']
 ];
-const missing=[];
 
-function tog(id){document.getElementById(id).classList.toggle('open')}
-
-function tc(el){el.classList.toggle('chk');el.querySelector('input').checked=el.classList.contains('chk')}
-
-function selRad(el,grp){
-  document.querySelectorAll('#'+grp+' .radio-item').forEach(r=>r.classList.remove('sel'));
-  el.classList.add('sel');
-  el.querySelector('input').checked=true;
+/* ── UTILS ── */
+function genUUID(){
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){
+    var r=Math.random()*16|0,v=c==='x'?r:(r&0x3|0x8);return v.toString(16);
+  });
 }
+function getVal(id){var el=document.getElementById(id);return el?el.value.trim():'';}
+function getRadioVal(name){var s=document.querySelector('input[name="'+name+'"]:checked');return s?s.value:'';}
+function getChecked(ids){return ids.filter(function(id){var e=document.getElementById(id);return e&&e.checked;}).map(function(id){return document.getElementById(id).value;});}
 
-function toggleNA(btn,nextId){
+function tog(id){document.getElementById(id).classList.toggle('open');}
+function tc(el){el.classList.toggle('chk');el.querySelector('input').checked=el.classList.contains('chk');}
+function selRad(el,grp){
+  document.querySelectorAll('#'+grp+' .radio-item').forEach(function(r){r.classList.remove('sel');});
+  el.classList.add('sel');el.querySelector('input').checked=true;
+}
+function toggleNA(btn){
   btn.classList.toggle('active');
-  var f=btn.closest('.f');
-  f.classList.toggle('na-mode');
+  var f=btn.closest('.f');f.classList.toggle('na-mode');
   if(btn.classList.contains('active')){
     btn.textContent='Quitar N/A';
-    if(f.querySelector('input'))f.querySelector('input').value='N/A';
-    if(f.querySelector('select'))f.querySelector('select').value='';
+    var inp=f.querySelector('input:not([type=file])');
+    if(inp)inp.value='N/A';
+    var sel=f.querySelector('select');if(sel)sel.value='';
   } else {
     btn.textContent='No aplica';
-    if(f.querySelector('input')&&f.querySelector('input').value==='N/A')f.querySelector('input').value='';
+    var inp2=f.querySelector('input:not([type=file])');
+    if(inp2&&inp2.value==='N/A')inp2.value='';
   }
 }
-
 function addFiles(input,listId){
   var list=document.getElementById(listId);
   Array.from(input.files).forEach(function(file){
-    var tag=document.createElement('div');
-    tag.className='file-tag';
+    var tag=document.createElement('div');tag.className='file-tag';
     tag.innerHTML=file.name.substring(0,30)+(file.name.length>30?'...':'')+' <span class="rm" onclick="this.parentNode.remove()">×</span>';
     list.appendChild(tag);
   });
 }
+function getFileNames(listId){
+  var el=document.getElementById(listId);
+  if(!el)return[];
+  return Array.from(el.querySelectorAll('.file-tag')).map(function(t){return t.textContent.replace('×','').trim();});
+}
+function openDrive(type){
+  window.open(DRIVE_VIDEOS_URL,'_blank');
+}
 
+/* ── TOAST ── */
+function showToast(msg){
+  var t=document.getElementById('vg-toast');
+  if(!t){
+    t=document.createElement('div');t.id='vg-toast';
+    t.style.cssText='position:fixed;bottom:76px;left:50%;transform:translateX(-50%) translateY(8px);background:#1D9E75;color:#fff;padding:7px 18px;border-radius:20px;font-size:10px;font-weight:700;letter-spacing:1px;z-index:9999;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none;white-space:nowrap;box-shadow:0 4px 14px #0006';
+    document.body.appendChild(t);
+  }
+  t.textContent=msg;
+  t.style.opacity='1';t.style.transform='translateX(-50%) translateY(0)';
+  clearTimeout(t._to);
+  t._to=setTimeout(function(){t.style.opacity='0';t.style.transform='translateX(-50%) translateY(8px)';},2200);
+}
+
+/* ── RECOGER DATOS POR SECCIÓN ── */
+function collectSection(n){
+  var d={};
+  if(n===1){
+    d.owner_name=getVal('ownerName');
+    d.business_name=getVal('bizName');
+    d.industry=getVal('industry');
+    d.years_in_business=getVal('yearsInBiz');
+    d.timezone=getVal('timezone');
+    d.website=getVal('website');
+    d.business_hours=getVal('schedule');
+  }
+  else if(n===2){
+    var wa=getRadioVal('wa'),call=getRadioVal('call');
+    d.email=getVal('email');
+    d.phone=getVal('phone');
+    d.wa_status=wa;
+    d.has_whatsapp_business=(wa==='tengo');
+    d.whatsapp_number=getVal('waNumber');
+    d.call_status=call;
+    d.has_dedicated_phone=(call==='si');
+    d.preferred_contact=getVal('preferredContact');
+  }
+  else if(n===3){
+    var mAds=getVal('metaAds'),gAds=getVal('googleAds'),gBiz=getVal('googleBiz');
+    d.instagram=getVal('instagram');
+    d.instagram_url=getVal('instagram');
+    d.tiktok=getVal('tiktok');
+    d.facebook=getVal('facebook');
+    d.facebook_url=getVal('facebook');
+    d.linkedin=getVal('linkedin');
+    d.meta_ads=mAds;
+    d.meta_bm=getVal('metaBM');
+    d.ad_account_id=getVal('adAcctId');
+    d.pixel_id=getVal('pixelId');
+    d.google_business=gBiz;
+    d.google_ads=gAds;
+    d.has_meta_ads=(['Sí, activos ahora','Sí, pero pausados'].indexOf(mAds)>-1);
+    d.has_google_ads=(gAds==='Sí, activos');
+    d.has_google_business=(['Sí, activo y verificado','Sí, sin verificar'].indexOf(gBiz)>-1);
+  }
+  else if(n===4){
+    d.services_description=getVal('services');
+    d.ideal_client=getVal('idealClient');
+    d.lead_source=getVal('leadSource');
+    d.sales_process=getVal('salesProcess');
+    var ticket=getVal('avgTicket');
+    d.avg_ticket=ticket;
+    d.price_range=ticket;
+    d.sales_script_files=getFileNames('salesScriptFiles');
+  }
+  else if(n===5){
+    d.brand_story=getVal('story');
+    d.brand_why=getVal('whyYou');
+    d.brand_differentiator=getVal('differentiator');
+    d.slogan=getVal('slogan');
+    d.communication_tone=getVal('tone');
+    d.faqs=getVal('faq');
+    d.objections=getVal('objections');
+    d.testimonials=getVal('testimonials');
+    d.doc_files=getFileNames('docFiles');
+  }
+  else if(n===6){
+    var c1=getVal('color1'),c2=getVal('color2'),c3=getVal('color3'),c4=getVal('color4'),cex=getVal('colorExtra');
+    d.primary_color=c1;
+    d.secondary_color=c2;
+    d.background_color=c3;
+    d.text_color=c4;
+    d.extra_color=cex;
+    d.brand_colors=[c1,c2,c3,c4].filter(Boolean).join(', ');
+    d.brand_font=getVal('typography');
+    d.typography=getVal('typography');
+    d.visual_references=getVal('visualRef');
+    d.competitors_reference=getVal('visualRef');
+    d.logo_files=getFileNames('logoFiles');
+    d.photo_files=getFileNames('photoFiles');
+    d.ref_video_url=getVal('refVideoUrl');
+  }
+  else if(n===7){
+    var hg=getRadioVal('hg'),hgv=getRadioVal('hgv'),el=getRadioVal('el');
+    d.wants_video_clone=(hg==='si');
+    d.heygen_status=hg;
+    d.heygen_video_ready=(hgv==='si');
+    d.training_video_recorded=(hgv==='si');
+    d.heygen_video_url=getVal('heygenVideoUrl');
+    d.wants_voice_clone=(el==='si');
+    d.bot_name=getVal('botName');
+    d.languages=getChecked(['lang_es','lang_en','lang_pt','lang_other']);
+    d.palabras_si=getVal('palabrasSi');
+    d.palabras_no=getVal('palabrasNo');
+    d.hashtags=getVal('hashtagsMarca');
+    d.videos_per_week=getVal('videosSemana');
+    d.broll_style=getVal('estiloBroll');
+    d.platforms=getChecked(['plat_tiktok','plat_reels','plat_shorts','plat_linkedin']);
+    d.video_formats=getChecked(['fmt_submagic','fmt_studio','fmt_agent']);
+    d.voice_audio_files=getFileNames('voiceAudio');
+  }
+  else if(n===8){
+    var dom=getVal('hasDomain'),mg=getVal('mailgunStatus');
+    d.current_crm=getVal('currentCRM');
+    d.existing_contacts_count=getVal('contactCount');
+    d.meta_business_email=getVal('metaEmail');
+    d.has_own_domain=(dom==='Sí, tengo dominio');
+    d.domain=getVal('domainName');
+    d.domain_name=getVal('domainName');
+    d.domain_registrar=getVal('domainReg');
+    d.mailgun_status=mg;
+    d.has_mailgun=(mg==='Sí, ya configurado');
+    d.state=getVal('state');
+    var broker=getVal('brokerStatus'),a2p=getVal('a2pStatus'),tcpa=getVal('tcpaStatus'),ein=getVal('einStatus');
+    d.broker_status=broker;
+    d.works_under_broker=(['Bajo un broker','Ambos / Mixto'].indexOf(broker)>-1);
+    d.a2p_status=a2p;
+    d.a2p_registered=(a2p==='Ya tengo registro A2P activo');
+    d.tcpa_status=tcpa;
+    d.tcpa_compliant=(tcpa==='Sí, ya tengo consentimiento configurado');
+    d.ein_status=ein;
+    d.has_ein=(ein==='Sí, tengo EIN');
+    d.notes=getVal('notes');
+  }
+  return d;
+}
+
+/* ── GUARDAR SECCIÓN → N8N ── */
+async function saveSection(n){
+  if(!CLIENT_ID)CLIENT_ID=genUUID();
+  var payload={
+    section:SECTION_NAMES[n],
+    client_id:CLIENT_ID,
+    data:collectSection(n),
+    formulario:'Onboarding Vantage Growth IA',
+    fecha:new Date().toISOString()
+  };
+  try{
+    await fetch(WEBHOOK_SECCION,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    showToast('✓ Guardado');
+  }catch(e){console.warn('saveSection '+n+' error:',e);}
+}
+
+/* ── DATOS COMPLETOS (submit final) ── */
+function collectData(){
+  var data={formulario:'Onboarding Vantage Growth IA',fecha_envio:new Date().toISOString(),client_id:CLIENT_ID};
+  for(var i=1;i<=8;i++){Object.assign(data,collectSection(i));}
+  var pending=[];
+  req.forEach(function(r){var el=document.getElementById(r[0]);if(el&&!el.value.trim())pending.push(r[1]);});
+  if(pending.length>0)data.campos_pendientes=pending;
+  return data;
+}
+
+/* ── NAVEGACIÓN ── */
 function updateUI(){
   for(var i=1;i<=tot;i++){
     var s=document.getElementById('s'+i);if(s)s.classList.toggle('active',i===cur);
     var st=document.querySelectorAll('.st')[i-1];
-    if(st){st.classList.remove('active','done');if(i===cur)st.classList.add('active');if(i<cur)st.classList.add('done')}
-    if(i<tot){var ln=document.getElementById('l'+i);if(ln)ln.classList.toggle('done',i<cur)}
+    if(st){st.classList.remove('active','done');if(i===cur)st.classList.add('active');if(i<cur)st.classList.add('done');}
+    if(i<tot){var ln=document.getElementById('l'+i);if(ln)ln.classList.toggle('done',i<cur);}
   }
   document.getElementById('scnt').textContent='Paso '+cur+' de '+tot;
   document.getElementById('bback').style.display=cur>1?'block':'none';
@@ -1094,127 +1356,58 @@ function updateUI(){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
+async function next(){
+  if(cur<tot){
+    var btn=document.getElementById('bnext');
+    btn.disabled=true;btn.textContent='Guardando...';
+    await saveSection(cur);
+    cur++;updateUI();
+    btn.disabled=false;btn.textContent='Continuar →';
+  }
+}
+function prev(){if(cur>1){cur--;updateUI();}}
+function goTo(n){if(n<=cur){cur=n;updateUI();}}
+
+/* ── VALIDACIÓN ── */
 function checkMissing(){
-  var list=document.getElementById('missingList');
-  list.innerHTML='';
+  var list=document.getElementById('missingList');list.innerHTML='';
   var found=[];
-  req.forEach(function(r){
-    var el=document.getElementById(r[0]);
-    if(el&&!el.value.trim()){found.push(r[1]);}
-  });
-  if(found.length>0){
-    document.getElementById('missingPanel').classList.add('show');
-    found.forEach(function(f){
-      var li=document.createElement('li');li.textContent=f;list.appendChild(li);
-    });
-  } else {
-    document.getElementById('missingPanel').classList.remove('show');
-  }
+  req.forEach(function(r){var el=document.getElementById(r[0]);if(el&&!el.value.trim())found.push(r[1]);});
+  document.getElementById('missingPanel').classList.toggle('show',found.length>0);
+  found.forEach(function(f){var li=document.createElement('li');li.textContent=f;list.appendChild(li);});
 }
 
-function next(){if(cur<tot){cur++;updateUI()}}
-function prev(){if(cur>1){cur--;updateUI()}}
-function goTo(n){if(n<=cur){cur=n;updateUI()}}
-
-function addHeygenVideos(input){
-  var errEl=document.getElementById('heygenVideoError');
-  var list=document.getElementById('heygenVideo');
-  if(input.files&&input.files.length>5){
-    errEl.style.display='block';
-    list.innerHTML='';
-    input.value='';
-    return;
-  }
-  errEl.style.display='none';
-  list.innerHTML='';
-  Array.from(input.files).forEach(function(file){
-    var tag=document.createElement('div');
-    tag.className='file-tag';
-    tag.innerHTML=file.name.substring(0,30)+(file.name.length>30?'...':'')+' <span class="rm" onclick="this.parentNode.remove()">×</span>';
-    list.appendChild(tag);
-  });
-}
-
-function collectData(){
-  var data={formulario:'Onboarding Vantage Growth IA',fecha_envio:new Date().toISOString()};
-  var ids=['ownerName','bizName','industry','bizType','timezone','schedule','tagline','email','phone','whatsapp',
-    'instagram','facebook','tiktok','youtube','linkedin','website','googleBiz',
-    'state','country','hasEIN','registeredBiz','a2pStatus','tcpaStatus',
-    'services','idealClient','avgTicket','tone','objections','priceRange',
-    'brandColors','brandFont','logoDesc','refBrands','brandExclusions',
-    'salesScript','domainName','domainReg','mailgunStatus','currentCRM','contactCount',
-    'preferredContact','notes'];
-  ids.forEach(function(id){
-    var el=document.getElementById(id);
-    if(el&&el.value&&el.value.trim())data[id]=el.value.trim();
-  });
-  // Radio groups
-  document.querySelectorAll('.radio-group').forEach(function(grp){
-    var sel=grp.querySelector('.radio-item.sel input');
-    if(sel&&sel.name)data[sel.name]=sel.value;
-  });
-  // Checkboxes
-  document.querySelectorAll('input[type=checkbox]').forEach(function(cb){
-    if(cb.name){if(!data[cb.name])data[cb.name]=[];if(cb.checked)(data[cb.name]).push(cb.value);}
-  });
-  // File names
-  var fileFields=['salesScriptFiles','docFiles','mediaFiles','logoFiles','photoFiles','refVideoFiles','heygenVideo','voiceAudio'];
-  fileFields.forEach(function(fid){
-    var tags=document.querySelectorAll('#'+fid+' .file-tag');
-    if(tags.length>0){
-      data[fid]=Array.from(tags).map(function(t){return t.textContent.replace('×','').trim();});
-    }
-  });
-  var pending=[];
-  req.forEach(function(r){var el=document.getElementById(r[0]);if(el&&!el.value.trim())pending.push(r[1]);});
-  if(pending.length>0)data['campos_pendientes']=pending;
-  return data;
-}
-
+/* ── SUBMIT FINAL ── */
 async function submitForm(){
   var btn=document.getElementById('bsub');
-  btn.disabled=true;
+  btn.disabled=true;btn.textContent='Guardando...';btn.style.opacity='0.7';
+  await saveSection(8);
   btn.textContent='Enviando...';
-  btn.style.opacity='0.7';
-
   var payload=collectData();
-
   try{
-    var res=await fetch('https://nexoraia-51-n8n.tndpve.easypanel.host/webhook/onboarding-cliente',{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify(payload)
-    });
+    var res=await fetch(WEBHOOK_FINAL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
     if(!res.ok)throw new Error('HTTP '+res.status);
-
-    var pending=payload['campos_pendientes']||[];
+    var pending=payload.campos_pendientes||[];
     document.getElementById('mainBody').style.display='none';
     document.getElementById('ftr').style.display='none';
     document.querySelector('.prog-wrap').style.display='none';
     document.querySelector('.top-bar').style.display='none';
-    var suc=document.getElementById('sucScreen');
-    suc.classList.add('show');
+    document.getElementById('sucScreen').classList.add('show');
     if(pending.length>0){
-      var pb=document.getElementById('pendingBlock');
-      pb.innerHTML='<div class="pending-list"><h4>⚠ Información pendiente</h4><ul>'+
-        pending.map(function(p){return'<li>'+p+'</li>'}).join('')+
+      document.getElementById('pendingBlock').innerHTML='<div class="pending-list"><h4>Información pendiente</h4><ul>'+
+        pending.map(function(p){return'<li>'+p+'</li>';}).join('')+
         '</ul><p style="font-size:10px;color:#8A6030;margin-top:.75rem">Te contactaremos para completar estos datos antes de finalizar la implementación.</p></div>';
     }
   }catch(err){
-    btn.disabled=false;
-    btn.textContent='Enviar formulario ✓';
-    btn.style.opacity='1';
+    btn.disabled=false;btn.textContent='Enviar formulario ✓';btn.style.opacity='1';
     alert('Error al enviar. Verifica tu conexión e intenta nuevamente.\n\n'+err.message);
   }
 }
 
+/* ── INIT ── */
 updateUI();
-
-// Marca campos con valor
 document.querySelectorAll('.f input,.f select,.f textarea').forEach(function(el){
-  el.addEventListener('input',function(){
-    this.classList.toggle('has-val',this.value.trim().length>0);
-  });
+  el.addEventListener('input',function(){this.classList.toggle('has-val',this.value.trim().length>0);});
 });
 </script>
 </body>
