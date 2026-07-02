@@ -1086,7 +1086,7 @@ async function submitForm(){
     if(!res.ok)throw new Error('HTTP '+res.status);
     var ownerName=payload.owner_name||'';
     document.getElementById('mainBody').style.display='none';
-    document.getElementById('ftr').style.display='none';
+    document.querySelector('.ftr').style.display='none';
     document.querySelector('.prog-wrap').style.display='none';
     document.querySelector('.top-bar').style.display='none';
     document.getElementById('sucTitle').textContent=ownerName?'¡Todo listo, '+ownerName.split(' ')[0]+'!':'¡Todo listo!';
