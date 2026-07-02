@@ -347,6 +347,20 @@ a{color:var(--bright);text-decoration:none}
     <div class="tip-box" id="t1g">Tu página web, perfil de LinkedIn, Google Business, o cualquier URL donde alguien pueda encontrarte online. Si no tienes, déjalo en blanco.</div>
     <input type="url" id="website" placeholder="https://">
   </div>
+  <div class="f">
+    <label>¿Atiendes en un lugar físico?<i class="tip-btn" onclick="tog('t1h')">i</i></label>
+    <div class="tip-box" id="t1h">Consultorio, oficina, tienda o cualquier local donde tus clientes te visiten. Esta dirección se usa en confirmaciones de cita, mensajes de bienvenida y protocolos de urgencia si aplica a tu negocio.</div>
+    <div class="radio-group" id="rg_hasPhysicalLocation">
+      <label class="radio-item" onclick="selRad('rg_hasPhysicalLocation',this);toggleCond('cond_physicalAddress',this,'Sí')"><input type="radio" name="hasPhysicalLocation" value="Sí"><div class="radio-dot"></div><span class="radio-lbl">Sí, tengo lugar físico</span></label>
+      <label class="radio-item" onclick="selRad('rg_hasPhysicalLocation',this);toggleCond('cond_physicalAddress',this,'Sí')"><input type="radio" name="hasPhysicalLocation" value="No"><div class="radio-dot"></div><span class="radio-lbl">No, atiendo remoto</span></label>
+    </div>
+  </div>
+  <div class="cond" id="cond_physicalAddress">
+    <div class="f optional">
+      <label>Dirección del local</label>
+      <input type="text" id="physicalAddress" placeholder="Ej. Calle 10 #5-20, Local 3, Miami, FL">
+    </div>
+  </div>
 </div>
 
 <!-- ═══ SECCIÓN 2 — CONTACTO ═══ -->
@@ -372,7 +386,7 @@ a{color:var(--bright);text-decoration:none}
     <div class="tip-box" id="t2c">WhatsApp Business es la versión profesional de WhatsApp. Si no la tienes, podemos ayudarte a configurarla — es gratuita y es uno de los canales más efectivos para atender prospectos.</div>
     <div class="radio-group" id="rg_hasWhatsapp">
       <label class="radio-item" onclick="selRad('rg_hasWhatsapp',this);toggleCond('cond_whatsapp',this,'Sí')"><input type="radio" name="hasWhatsapp" value="Sí"><div class="radio-dot"></div><span class="radio-lbl">Sí</span></label>
-      <label class="radio-item" onclick="selRad('rg_hasWhatsapp',this);toggleCond('cond_whatsapp',this,'No')"><input type="radio" name="hasWhatsapp" value="No"><div class="radio-dot"></div><span class="radio-lbl">No</span></label>
+      <label class="radio-item" onclick="selRad('rg_hasWhatsapp',this);toggleCond('cond_whatsapp',this,'Sí')"><input type="radio" name="hasWhatsapp" value="No"><div class="radio-dot"></div><span class="radio-lbl">No</span></label>
     </div>
   </div>
   <div class="cond" id="cond_whatsapp">
@@ -389,6 +403,11 @@ a{color:var(--bright);text-decoration:none}
       <label class="radio-item" onclick="selRad('rg_receivesLeadCalls',this)"><input type="radio" name="receivesLeadCalls" value="Sí"><div class="radio-dot"></div><span class="radio-lbl">Sí</span></label>
       <label class="radio-item" onclick="selRad('rg_receivesLeadCalls',this)"><input type="radio" name="receivesLeadCalls" value="No"><div class="radio-dot"></div><span class="radio-lbl">No</span></label>
     </div>
+  </div>
+  <div class="f optional">
+    <label>Link de reseñas de Google<i class="tip-btn" onclick="tog('t2f')">i</i></label>
+    <div class="tip-box" id="t2f">El link directo a tu perfil de Google Business donde tus clientes pueden dejarte una reseña. Lo usamos para pedir reseñas automáticamente después de una buena experiencia. Si no tienes uno, lo configuramos juntos.</div>
+    <input type="url" id="googleReviewsLink" placeholder="https://g.page/r/tu-negocio/review">
   </div>
 </div>
 
@@ -493,12 +512,20 @@ a{color:var(--bright);text-decoration:none}
     </div>
   </div>
   <div class="f">
+    <label>¿Tu Instagram es personal o de tu negocio?<i class="tip-btn" onclick="tog('t5h')">i</i></label>
+    <div class="tip-box" id="t5h">Esto define cómo responde tu agente de DM en Instagram: si la cuenta te representa a ti como persona, responde en primera persona como si fueras tú. Si representa a tu marca o negocio, responde como parte del equipo, no como un individuo específico.</div>
+    <div class="radio-group" id="rg_igMode">
+      <label class="radio-item" onclick="selRad('rg_igMode',this)"><input type="radio" name="igMode" value="Personal — la cuenta me representa a mí"><div class="radio-dot"></div><span class="radio-lbl">Personal — la cuenta me representa a mí</span></label>
+      <label class="radio-item" onclick="selRad('rg_igMode',this)"><input type="radio" name="igMode" value="De negocio — la cuenta representa la marca"><div class="radio-dot"></div><span class="radio-lbl">De negocio — la cuenta representa la marca</span></label>
+    </div>
+  </div>
+  <div class="f">
     <label>¿En qué horario responde tu asistente?<i class="tip-btn" onclick="tog('t5c')">i</i></label>
     <div class="tip-box" id="t5c">Tu asistente puede estar activo en todo momento o solo durante tu horario laboral — tú decides. Si eliges horario personalizado, especifícalo abajo.</div>
     <div class="radio-group" id="rg_botSchedule">
-      <label class="radio-item" onclick="selRad('rg_botSchedule',this);toggleCond('cond_botScheduleCustom',this,'No')"><input type="radio" name="botSchedule" value="24/7 sin restricciones"><div class="radio-dot"></div><span class="radio-lbl">24/7 sin restricciones</span></label>
-      <label class="radio-item" onclick="selRad('rg_botSchedule',this);toggleCond('cond_botScheduleCustom',this,'No')"><input type="radio" name="botSchedule" value="Solo en mi horario de trabajo"><div class="radio-dot"></div><span class="radio-lbl">Solo en mi horario de trabajo</span></label>
-      <label class="radio-item" onclick="selRad('rg_botSchedule',this);toggleCond('cond_botScheduleCustom',this,'Sí')"><input type="radio" name="botSchedule" value="Horario personalizado"><div class="radio-dot"></div><span class="radio-lbl">Horario personalizado</span></label>
+      <label class="radio-item" onclick="selRad('rg_botSchedule',this);toggleCond('cond_botScheduleCustom',this,'Horario personalizado')"><input type="radio" name="botSchedule" value="24/7 sin restricciones"><div class="radio-dot"></div><span class="radio-lbl">24/7 sin restricciones</span></label>
+      <label class="radio-item" onclick="selRad('rg_botSchedule',this);toggleCond('cond_botScheduleCustom',this,'Horario personalizado')"><input type="radio" name="botSchedule" value="Solo en mi horario de trabajo"><div class="radio-dot"></div><span class="radio-lbl">Solo en mi horario de trabajo</span></label>
+      <label class="radio-item" onclick="selRad('rg_botSchedule',this);toggleCond('cond_botScheduleCustom',this,'Horario personalizado')"><input type="radio" name="botSchedule" value="Horario personalizado"><div class="radio-dot"></div><span class="radio-lbl">Horario personalizado</span></label>
     </div>
   </div>
   <div class="cond" id="cond_botScheduleCustom">
@@ -511,11 +538,11 @@ a{color:var(--bright);text-decoration:none}
     <label>¿Cómo prefieres reunirte con tus prospectos?<i class="tip-btn" onclick="tog('t5d')">i</i></label>
     <div class="tip-box" id="t5d">Selecciona todos los canales que usas o estarías dispuesto a usar para reunirte con alguien interesado en tus servicios.</div>
     <div class="cb-grid" id="cbg_meeting">
-      <label class="cb-item" onclick="togCb(this)"><input type="checkbox" name="meetingChannels" value="Google Meet"><div class="cb-box"></div><span class="cb-lbl">Google Meet</span></label>
-      <label class="cb-item" onclick="togCb(this)"><input type="checkbox" name="meetingChannels" value="Zoom"><div class="cb-box"></div><span class="cb-lbl">Zoom</span></label>
-      <label class="cb-item" onclick="togCb(this)"><input type="checkbox" name="meetingChannels" value="Llamada telefónica"><div class="cb-box"></div><span class="cb-lbl">Llamada telefónica</span></label>
-      <label class="cb-item" onclick="togCb(this)"><input type="checkbox" name="meetingChannels" value="WhatsApp Video"><div class="cb-box"></div><span class="cb-lbl">WhatsApp Video</span></label>
-      <label class="cb-item" onclick="togCb(this)"><input type="checkbox" name="meetingChannels" value="Presencial"><div class="cb-box"></div><span class="cb-lbl">Presencial</span></label>
+      <label class="cb-item"><input type="checkbox" name="meetingChannels" value="Google Meet" onchange="togCb(this)"><div class="cb-box"></div><span class="cb-lbl">Google Meet</span></label>
+      <label class="cb-item"><input type="checkbox" name="meetingChannels" value="Zoom" onchange="togCb(this)"><div class="cb-box"></div><span class="cb-lbl">Zoom</span></label>
+      <label class="cb-item"><input type="checkbox" name="meetingChannels" value="Llamada telefónica" onchange="togCb(this)"><div class="cb-box"></div><span class="cb-lbl">Llamada telefónica</span></label>
+      <label class="cb-item"><input type="checkbox" name="meetingChannels" value="WhatsApp Video" onchange="togCb(this)"><div class="cb-box"></div><span class="cb-lbl">WhatsApp Video</span></label>
+      <label class="cb-item"><input type="checkbox" name="meetingChannels" value="Presencial" onchange="togCb(this)"><div class="cb-box"></div><span class="cb-lbl">Presencial</span></label>
     </div>
   </div>
   <div class="f">
@@ -523,7 +550,7 @@ a{color:var(--bright);text-decoration:none}
     <div class="tip-box" id="t5e">Un link de agendamiento (Calendly, Google Calendar, Cal.com u otro) permite que tu asistente envíe a los prospectos directamente a agendar su cita sin intervención manual. Si no tienes uno, lo configuramos juntos.</div>
     <div class="radio-group" id="rg_hasCalendarLink">
       <label class="radio-item" onclick="selRad('rg_hasCalendarLink',this);toggleCond('cond_calendarLink',this,'Sí')"><input type="radio" name="hasCalendarLink" value="Sí"><div class="radio-dot"></div><span class="radio-lbl">Sí, tengo link de agendamiento</span></label>
-      <label class="radio-item" onclick="selRad('rg_hasCalendarLink',this);toggleCond('cond_calendarLink',this,'No')"><input type="radio" name="hasCalendarLink" value="No"><div class="radio-dot"></div><span class="radio-lbl">No, lo configuramos juntos</span></label>
+      <label class="radio-item" onclick="selRad('rg_hasCalendarLink',this);toggleCond('cond_calendarLink',this,'Sí')"><input type="radio" name="hasCalendarLink" value="No"><div class="radio-dot"></div><span class="radio-lbl">No, lo configuramos juntos</span></label>
     </div>
   </div>
   <div class="cond" id="cond_calendarLink">
@@ -669,7 +696,7 @@ a{color:var(--bright);text-decoration:none}
     <div class="tip-box" id="t8a">Un dominio propio es tu dirección web personalizada (ej: tunegocio.com). Si no tienes uno, podemos ayudarte a conseguir uno — es un paso importante para dar imagen profesional a todo tu sistema.</div>
     <div class="radio-group" id="rg_hasDomain">
       <label class="radio-item" onclick="selRad('rg_hasDomain',this);toggleCond('cond_domain',this,'Sí')"><input type="radio" name="hasDomain" value="Sí"><div class="radio-dot"></div><span class="radio-lbl">Sí, tengo dominio</span></label>
-      <label class="radio-item" onclick="selRad('rg_hasDomain',this);toggleCond('cond_domain',this,'No')"><input type="radio" name="hasDomain" value="No"><div class="radio-dot"></div><span class="radio-lbl">No tengo dominio</span></label>
+      <label class="radio-item" onclick="selRad('rg_hasDomain',this);toggleCond('cond_domain',this,'Sí')"><input type="radio" name="hasDomain" value="No"><div class="radio-dot"></div><span class="radio-lbl">No tengo dominio</span></label>
     </div>
   </div>
   <div class="cond" id="cond_domain">
@@ -684,6 +711,28 @@ a{color:var(--bright);text-decoration:none}
     <div class="radio-group" id="rg_wantsProfEmail">
       <label class="radio-item" onclick="selRad('rg_wantsProfEmail',this)"><input type="radio" name="wantsProfEmail" value="Sí"><div class="radio-dot"></div><span class="radio-lbl">Sí, quiero correo profesional</span></label>
       <label class="radio-item" onclick="selRad('rg_wantsProfEmail',this)"><input type="radio" name="wantsProfEmail" value="No"><div class="radio-dot"></div><span class="radio-lbl">No por ahora</span></label>
+    </div>
+  </div>
+  <div class="f">
+    <label>¿Usas o planeas usar anuncios pagados en Meta (Facebook/Instagram)?<i class="tip-btn" onclick="tog('t8e')">i</i></label>
+    <div class="tip-box" id="t8e">Esto nos ayuda a definir si necesitas el flujo de seguimiento automático para leads que llegan por formularios de anuncios de Meta.</div>
+    <div class="radio-group" id="rg_hasMetaAds">
+      <label class="radio-item" onclick="selRad('rg_hasMetaAds',this);toggleCond('cond_metaAds',this,'Sí')"><input type="radio" name="hasMetaAds" value="Sí"><div class="radio-dot"></div><span class="radio-lbl">Sí, uso o planeo usar anuncios</span></label>
+      <label class="radio-item" onclick="selRad('rg_hasMetaAds',this);toggleCond('cond_metaAds',this,'Sí')"><input type="radio" name="hasMetaAds" value="No"><div class="radio-dot"></div><span class="radio-lbl">No por ahora</span></label>
+    </div>
+  </div>
+  <div class="cond" id="cond_metaAds">
+    <div class="f optional">
+      <label>¿Tienes acceso al Business Manager de Meta?<i class="tip-btn" onclick="tog('t8f')">i</i></label>
+      <div class="tip-box" id="t8f">Necesitamos acceso a tu Business Manager para conectar los formularios de anuncios a tu sistema de seguimiento automático.</div>
+      <div class="radio-group" id="rg_hasMetaBM">
+        <label class="radio-item" onclick="selRad('rg_hasMetaBM',this)"><input type="radio" name="hasMetaBM" value="Sí"><div class="radio-dot"></div><span class="radio-lbl">Sí, tengo acceso</span></label>
+        <label class="radio-item" onclick="selRad('rg_hasMetaBM',this)"><input type="radio" name="hasMetaBM" value="No"><div class="radio-dot"></div><span class="radio-lbl">No, lo configuramos juntos</span></label>
+      </div>
+    </div>
+    <div class="f optional">
+      <label>Presupuesto mensual aproximado para anuncios</label>
+      <input type="text" id="metaAdsBudget" placeholder="Ej. $300 USD/mes">
     </div>
   </div>
   <div class="f optional">
@@ -783,10 +832,9 @@ function selRad(groupId,item){
 }
 
 // ─── CHECKBOX ───
-function togCb(item){
-  item.classList.toggle('chk');
-  var cb=item.querySelector('input[type=checkbox]');
-  if(cb) cb.checked=item.classList.contains('chk');
+function togCb(cb){
+  var item=cb.closest('.cb-item');
+  if(item) item.classList.toggle('chk',cb.checked);
 }
 
 // ─── CONDITIONAL FIELDS ───
@@ -923,10 +971,12 @@ function collectSection(n){
     d.industry=getVal('industry');d.industry_other=getVal('industryOther');
     d.main_goal=getRadio('mainGoal');d.timezone=getVal('timezone');
     d.schedule=getVal('schedule');d.website=getVal('website');
+    d.has_physical_location=getRadio('hasPhysicalLocation');d.physical_address=getVal('physicalAddress');
   } else if(n===2){
     d.email=getVal('email');d.phone=getVal('phone');
     d.has_whatsapp=getRadio('hasWhatsapp');d.whatsapp_number=getVal('whatsappNumber');
     d.receives_lead_calls=getRadio('receivesLeadCalls');
+    d.google_reviews_link=getVal('googleReviewsLink');
   } else if(n===3){
     d.instagram=getVal('instagram');d.facebook=getVal('facebook');
     d.tiktok=getVal('tiktok');d.linkedin=getVal('linkedin');d.youtube=getVal('youtube');
@@ -936,6 +986,7 @@ function collectSection(n){
     d.tone=getRadio('tone');d.reference_file_urls=fileStore.refDocs.slice();
   } else if(n===5){
     d.bot_name=getVal('botName');d.bot_mode=getRadio('botMode');
+    d.ig_mode=getRadio('igMode');
     d.bot_schedule=getRadio('botSchedule');d.bot_schedule_custom=getVal('botScheduleCustom');
     d.meeting_channels=getCheckedVals('meetingChannels');
     d.has_calendar_link=getRadio('hasCalendarLink');d.calendar_link=getVal('calendarLink');
@@ -949,6 +1000,7 @@ function collectSection(n){
   } else if(n===8){
     d.has_domain=getRadio('hasDomain');d.domain_name=getVal('domainName');
     d.wants_professional_email=getRadio('wantsProfEmail');
+    d.has_meta_ads=getRadio('hasMetaAds');d.has_meta_bm=getRadio('hasMetaBM');d.meta_ads_budget=getVal('metaAdsBudget');
     d.contacts_file_url=fileStore.contacts[0]||null;d.notes=getVal('notes');
   }
   return d;
