@@ -1081,8 +1081,18 @@ async function submitForm(){
   btn.disabled=true;btn.textContent='Enviando...';btn.style.opacity='0.7';
   await saveSection(8);
   var payload=collectData();
+  var controller=new AbortController();
+  var timeoutId=setTimeout(function(){controller.abort();},30000);
+  var networkError=false;
   try{
-    var res=await fetch(WEBHOOK_FINAL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    var res;
+    try{
+      res=await fetch(WEBHOOK_FINAL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:controller.signal});
+    }catch(fetchErr){
+      networkError=true;
+      throw fetchErr;
+    }
+    clearTimeout(timeoutId);
     if(!res.ok)throw new Error('HTTP '+res.status);
     var ownerName=payload.owner_name||'';
     document.getElementById('mainBody').style.display='none';
@@ -1101,8 +1111,13 @@ async function submitForm(){
         '</ul><p style="font-size:10px;color:#9A7040;margin-top:.6rem;line-height:1.5">Te contactaremos para completar estos datos antes de finalizar la implementación.</p></div>';
     }
   }catch(err){
+    clearTimeout(timeoutId);
     btn.disabled=false;btn.textContent='Enviar formulario ✓';btn.style.opacity='1';
-    alert('Error al enviar. Verifica tu conexión e intenta nuevamente.\n\n'+err.message);
+    if(networkError||err.name==='AbortError'){
+      alert('Tu información puede haberse enviado correctamente.\n\nNO reenvíes el formulario — escríbenos para confirmar antes de intentar de nuevo.');
+    }else{
+      alert('Error al enviar. Verifica tu conexión e intenta nuevamente.\n\n'+err.message);
+    }
   }
 }
 
